@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAISON - Premium Fashion Store</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header">
+    <div class="header-top">
+      <div class="container">
+        <div class="header-top__left">
+          <span>FREE SHIPPING ON ORDERS OVER ₩100,000</span>
+        </div>
+        <div class="header-top__right" module="Layout_stateLogon">
+          <div class="xans-logged-out">
+            <a href="/member/login.html">LOGIN</a>
+            <a href="/member/join.html">JOIN</a>
+          </div>
+          <div class="xans-logged-in">
+            <span>{$name}님</span>
+            <a href="/myshop/order/list.html">MYPAGE</a>
+            <a href="{$action_logout}">LOGOUT</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-main">
+      <div class="container">
+        <!-- 로고 -->
+        <h1 class="logo">
+          <a href="/">MAISON</a>
+        </h1>
+
+        <!-- 메인 네비게이션 -->
+        <nav class="gnb" module="Layout_category">
+          <ul class="gnb__list">
+            <li class="gnb__item {$display_group}">
+              <a href="{$link_category}" class="gnb__link">{$name}</a>
+              <div class="gnb__sub">
+                <ul module="Layout_category_sub">
+                  <li class="{$display_group}">
+                    <a href="{$link_category}">{$name}</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- 유틸 메뉴 -->
+        <div class="header-util">
+          <!-- 검색 -->
+          <div class="util-search" module="searchHeader">
+            <button type="button" class="btn-search" aria-label="검색">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+              </svg>
+            </button>
+            <div class="search-layer">
+              <form action="/product/search.html" method="get">
+                <input type="text" name="keyword" placeholder="Search...">
+                <button type="submit">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- 관심상품 -->
+          <a href="/myshop/wish_list.html" class="util-wish" aria-label="관심상품">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </a>
+
+          <!-- 장바구니 -->
+          <div class="util-cart" module="Layout_shoppingInfo">
+            <a href="/order/basket.html" aria-label="장바구니">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+              </svg>
+              <span class="cart-count">{$basket_count}</span>
+            </a>
+          </div>
+
+          <!-- 모바일 메뉴 -->
+          <button type="button" class="btn-menu" aria-label="메뉴">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== MAIN VISUAL ========== -->
+  <section class="main-visual">
+    <div class="swiper main-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="slide-content">
+            <div class="slide-bg" style="background-image: url('/web/upload/main_visual_01.jpg');"></div>
+            <div class="slide-text">
+              <span class="subtitle">2024 WINTER COLLECTION</span>
+              <h2 class="title">Timeless<br>Elegance</h2>
+              <p class="desc">겨울의 우아함을 담은 새로운 컬렉션</p>
+              <a href="/product/list.html?cate_no=1" class="btn-more">SHOP NOW</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-content">
+            <div class="slide-bg" style="background-image: url('/web/upload/main_visual_02.jpg');"></div>
+            <div class="slide-text">
+              <span class="subtitle">PREMIUM CASHMERE</span>
+              <h2 class="title">Soft &<br>Luxurious</h2>
+              <p class="desc">프리미엄 캐시미어의 부드러운 감촉</p>
+              <a href="/product/list.html?cate_no=2" class="btn-more">DISCOVER</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-content">
+            <div class="slide-bg" style="background-image: url('/web/upload/main_visual_03.jpg');"></div>
+            <div class="slide-text">
+              <span class="subtitle">SPECIAL SALE</span>
+              <h2 class="title">Up to<br>50% OFF</h2>
+              <p class="desc">시즌오프 특별 할인</p>
+              <a href="/product/list.html?cate_no=3" class="btn-more">VIEW SALE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </section>
+
+  <!-- ========== CATEGORY SHORTCUT ========== -->
+  <section class="category-section">
+    <div class="container">
+      <div class="category-grid">
+        <a href="/product/list.html?cate_no=10" class="category-item">
+          <div class="category-img">
+            <img src="/web/upload/category_outer.jpg" alt="OUTER">
+          </div>
+          <div class="category-info">
+            <h3>OUTER</h3>
+            <span>아우터</span>
+          </div>
+        </a>
+        <a href="/product/list.html?cate_no=11" class="category-item">
+          <div class="category-img">
+            <img src="/web/upload/category_top.jpg" alt="TOP">
+          </div>
+          <div class="category-info">
+            <h3>TOP</h3>
+            <span>상의</span>
+          </div>
+        </a>
+        <a href="/product/list.html?cate_no=12" class="category-item">
+          <div class="category-img">
+            <img src="/web/upload/category_bottom.jpg" alt="BOTTOM">
+          </div>
+          <div class="category-info">
+            <h3>BOTTOM</h3>
+            <span>하의</span>
+          </div>
+        </a>
+        <a href="/product/list.html?cate_no=13" class="category-item">
+          <div class="category-img">
+            <img src="/web/upload/category_acc.jpg" alt="ACCESSORY">
+          </div>
+          <div class="category-info">
+            <h3>ACC</h3>
+            <span>악세서리</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== NEW ARRIVALS ========== -->
+  <section class="product-section new-arrivals">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">NEW ARRIVALS</h2>
+        <p class="section-desc">새로운 시즌, 새로운 스타일</p>
+        <a href="/product/list.html?cate_no=1" class="btn-view-all">VIEW ALL</a>
+      </div>
+
+      <div class="swiper product-slider" module="product_listmain_1">
+        <!--@css(/css/module/product/listmain.css)-->
+        <!-- $count = 8
+             $basket_result = /product/add_basket.html
+             $basket_option = /product/basket_option.html -->
+
+        <ul class="swiper-wrapper product-list">
+          <li class="swiper-slide product-item" id="anchorBoxId_{$product_no}">
+            <div class="product-thumb">
+              <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}">
+                <img src="{$image_medium}" alt="{$seo_alt_tag}" class="thumb-img">
+                <img src="{$image_medium_2}" alt="{$seo_alt_tag}" class="thumb-img hover">
+              </a>
+              <div class="product-icons">
+                {$soldout_icon}
+                {$new_icon}
+              </div>
+              <div class="product-actions">
+                <button type="button" class="btn-wish">{$action_wishlist}
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn-cart">{$action_basket}
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn-quick">{$zoom_icon}
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="product-name">
+                <a href="/product/detail.html{$param}">{$product_name}</a>
+              </p>
+              <div class="product-price">
+                <span class="price-sale">{$disp_product_price}</span>
+                <span class="price-origin {$product_price_ref_display|display}">
+                  <del>{$txt_product_price_ref}</del>
+                </span>
+                <span class="discount-rate {$discount_rate_display|display}">{$discount_rate}%</span>
+              </div>
+              <ul class="product-colors" module="product_ListItem">
+                <li class="{$item_display|display}">{$item_content}</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BANNER SECTION ========== -->
+  <section class="banner-section">
+    <div class="container">
+      <div class="banner-grid">
+        <a href="/product/list.html?cate_no=20" class="banner-item banner-large">
+          <div class="banner-bg" style="background-image: url('/web/upload/banner_large.jpg');"></div>
+          <div class="banner-content">
+            <span class="banner-label">EXCLUSIVE</span>
+            <h3 class="banner-title">Winter Essential<br>Collection</h3>
+            <span class="banner-link">SHOP NOW →</span>
+          </div>
+        </a>
+        <a href="/product/list.html?cate_no=21" class="banner-item banner-small">
+          <div class="banner-bg" style="background-image: url('/web/upload/banner_small_01.jpg');"></div>
+          <div class="banner-content">
+            <span class="banner-label">KNITWEAR</span>
+            <h3 class="banner-title">Cozy Knit</h3>
+            <span class="banner-link">DISCOVER →</span>
+          </div>
+        </a>
+        <a href="/product/list.html?cate_no=22" class="banner-item banner-small">
+          <div class="banner-bg" style="background-image: url('/web/upload/banner_small_02.jpg');"></div>
+          <div class="banner-content">
+            <span class="banner-label">CASHMERE</span>
+            <h3 class="banner-title">Premium Wool</h3>
+            <span class="banner-link">EXPLORE →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BEST SELLERS ========== -->
+  <section class="product-section best-sellers">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">BEST SELLERS</h2>
+        <p class="section-desc">가장 사랑받는 아이템</p>
+        <a href="/product/list.html?cate_no=2" class="btn-view-all">VIEW ALL</a>
+      </div>
+
+      <div class="product-grid" module="product_listmain_2">
+        <!--@css(/css/module/product/listmain.css)-->
+        <!-- $count = 8
+             $basket_result = /product/add_basket.html
+             $basket_option = /product/basket_option.html -->
+
+        <ul class="product-list grid">
+          <li class="product-item" id="anchorBoxId_{$product_no}">
+            <div class="product-thumb">
+              <span class="rank-badge">BEST</span>
+              <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}">
+                <img src="{$image_medium}" alt="{$seo_alt_tag}" class="thumb-img">
+              </a>
+              <div class="product-icons">
+                {$soldout_icon}
+              </div>
+              <div class="product-actions">
+                <button type="button" class="btn-wish">{$action_wishlist}
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn-cart">{$action_basket}
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="product-name">
+                <a href="/product/detail.html{$param}">{$product_name}</a>
+              </p>
+              <div class="product-price">
+                <span class="price-sale">{$disp_product_price}</span>
+                <span class="price-origin {$product_price_ref_display|display}">
+                  <del>{$txt_product_price_ref}</del>
+                </span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOOKBOOK ========== -->
+  <section class="lookbook-section">
+    <div class="container">
+      <div class="section-header center">
+        <h2 class="section-title">LOOKBOOK</h2>
+        <p class="section-desc">이번 시즌 스타일링 제안</p>
+      </div>
+
+      <div class="lookbook-grid">
+        <div class="lookbook-item">
+          <div class="lookbook-img">
+            <img src="/web/upload/lookbook_01.jpg" alt="Lookbook 1">
+          </div>
+          <div class="lookbook-info">
+            <span class="lookbook-num">01</span>
+            <h3 class="lookbook-title">Minimal Chic</h3>
+            <p class="lookbook-desc">미니멀한 실루엣으로 완성하는 시크한 데일리 룩</p>
+            <a href="/board/gallery.html" class="lookbook-link">VIEW LOOK →</a>
+          </div>
+        </div>
+        <div class="lookbook-item">
+          <div class="lookbook-img">
+            <img src="/web/upload/lookbook_02.jpg" alt="Lookbook 2">
+          </div>
+          <div class="lookbook-info">
+            <span class="lookbook-num">02</span>
+            <h3 class="lookbook-title">Urban Casual</h3>
+            <p class="lookbook-desc">도시적인 감성의 캐주얼 스타일링</p>
+            <a href="/board/gallery.html" class="lookbook-link">VIEW LOOK →</a>
+          </div>
+        </div>
+        <div class="lookbook-item">
+          <div class="lookbook-img">
+            <img src="/web/upload/lookbook_03.jpg" alt="Lookbook 3">
+          </div>
+          <div class="lookbook-info">
+            <span class="lookbook-num">03</span>
+            <h3 class="lookbook-title">Modern Classic</h3>
+            <p class="lookbook-desc">클래식과 모던의 조화로운 만남</p>
+            <a href="/board/gallery.html" class="lookbook-link">VIEW LOOK →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MD'S PICK ========== -->
+  <section class="product-section mds-pick">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">MD'S PICK</h2>
+        <p class="section-desc">MD가 추천하는 이번 주 아이템</p>
+      </div>
+
+      <div class="mds-grid" module="product_listmain_3">
+        <!--@css(/css/module/product/listmain.css)-->
+        <!-- $count = 4
+             $basket_result = /product/add_basket.html
+             $basket_option = /product/basket_option.html -->
+
+        <ul class="product-list mds">
+          <li class="product-item large" id="anchorBoxId_{$product_no}">
+            <div class="product-thumb">
+              <a href="/product/detail.html{$param}">
+                <img src="{$image_big}" alt="{$seo_alt_tag}" class="thumb-img">
+              </a>
+              <div class="product-icons">
+                {$soldout_icon}
+                {$recommend_icon}
+              </div>
+            </div>
+            <div class="product-info">
+              <span class="md-comment">"이번 시즌 꼭 가져야 할 아이템"</span>
+              <p class="product-name">
+                <a href="/product/detail.html{$param}">{$product_name}</a>
+              </p>
+              <div class="product-price">
+                <span class="price-sale">{$disp_product_price}</span>
+              </div>
+              <a href="/product/detail.html{$param}" class="btn-detail">VIEW DETAIL</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SPECIAL OFFER ========== -->
+  <section class="special-offer">
+    <div class="offer-bg" style="background-image: url('/web/upload/special_offer_bg.jpg');"></div>
+    <div class="container">
+      <div class="offer-content">
+        <span class="offer-label">LIMITED TIME OFFER</span>
+        <h2 class="offer-title">WINTER SALE<br>UP TO 50% OFF</h2>
+        <p class="offer-desc">겨울 시즌 스페셜 세일<br>지금 바로 만나보세요</p>
+        <div class="offer-timer">
+          <div class="timer-item">
+            <span class="timer-num" id="days">00</span>
+            <span class="timer-label">DAYS</span>
+          </div>
+          <div class="timer-item">
+            <span class="timer-num" id="hours">00</span>
+            <span class="timer-label">HOURS</span>
+          </div>
+          <div class="timer-item">
+            <span class="timer-num" id="minutes">00</span>
+            <span class="timer-label">MINS</span>
+          </div>
+          <div class="timer-item">
+            <span class="timer-num" id="seconds">00</span>
+            <span class="timer-label">SECS</span>
+          </div>
+        </div>
+        <a href="/product/list.html?cate_no=99" class="btn-offer">SHOP SALE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INSTAGRAM FEED ========== -->
+  <section class="instagram-section">
+    <div class="container">
+      <div class="section-header center">
+        <h2 class="section-title">@MAISON_OFFICIAL</h2>
+        <p class="section-desc">Follow us on Instagram</p>
+      </div>
+
+      <div class="instagram-grid">
+        <a href="https://instagram.com" target="_blank" class="insta-item">
+          <img src="/web/upload/insta_01.jpg" alt="Instagram">
+          <div class="insta-overlay">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="insta-item">
+          <img src="/web/upload/insta_02.jpg" alt="Instagram">
+          <div class="insta-overlay">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="insta-item">
+          <img src="/web/upload/insta_03.jpg" alt="Instagram">
+          <div class="insta-overlay">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="insta-item">
+          <img src="/web/upload/insta_04.jpg" alt="Instagram">
+          <div class="insta-overlay">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="insta-item">
+          <img src="/web/upload/insta_05.jpg" alt="Instagram">
+          <div class="insta-overlay">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="insta-item">
+          <img src="/web/upload/insta_06.jpg" alt="Instagram">
+          <div class="insta-overlay">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICE INFO ========== -->
+  <section class="service-section">
+    <div class="container">
+      <div class="service-grid">
+        <div class="service-item">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <h3 class="service-title">FREE SHIPPING</h3>
+          <p class="service-desc">10만원 이상 무료배송</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+            </svg>
+          </div>
+          <h3 class="service-title">EASY RETURNS</h3>
+          <p class="service-desc">7일 이내 무료반품</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h3 class="service-title">SECURE PAYMENT</h3>
+          <p class="service-desc">안전한 결제 시스템</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <h3 class="service-title">CUSTOMER SERVICE</h3>
+          <p class="service-desc">평일 10:00 - 18:00</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" module="Layout_footer">
+    <!--@css(/css/module/layout/footer.css)-->
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- 브랜드 정보 -->
+          <div class="footer-col brand">
+            <h2 class="footer-logo">MAISON</h2>
+            <p class="footer-slogan">Timeless Style, Modern Elegance</p>
+            <div class="footer-social">
+              <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+              <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+              <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- 쇼핑 정보 -->
+          <div class="footer-col">
+            <h3 class="footer-title">SHOP</h3>
+            <ul class="footer-links">
+              <li><a href="/product/list.html?cate_no=10">OUTER</a></li>
+              <li><a href="/product/list.html?cate_no=11">TOP</a></li>
+              <li><a href="/product/list.html?cate_no=12">BOTTOM</a></li>
+              <li><a href="/product/list.html?cate_no=13">ACCESSORY</a></li>
+              <li><a href="/product/list.html?cate_no=99">SALE</a></li>
+            </ul>
+          </div>
+
+          <!-- 고객 서비스 -->
+          <div class="footer-col">
+            <h3 class="footer-title">HELP</h3>
+            <ul class="footer-links">
+              <li><a href="/board/faq.html">FAQ</a></li>
+              <li><a href="/order/order.html">주문조회</a></li>
+              <li><a href="/board/notice.html">공지사항</a></li>
+              <li><a href="/board/qna.html">1:1 문의</a></li>
+              <li><a href="/shop/info.html">이용안내</a></li>
+            </ul>
+          </div>
+
+          <!-- 회사 정보 -->
+          <div class="footer-col">
+            <h3 class="footer-title">COMPANY</h3>
+            <ul class="footer-links">
+              <li><a href="/shop/about.html">ABOUT US</a></li>
+              <li><a href="/shop/guide.html">STORE INFO</a></li>
+              <li><a href="/shop/privacy.html">개인정보처리방침</a></li>
+              <li><a href="/shop/agreement.html">이용약관</a></li>
+            </ul>
+          </div>
+
+          <!-- 고객센터 -->
+          <div class="footer-col cs">
+            <h3 class="footer-title">CUSTOMER CENTER</h3>
+            <p class="cs-phone">{$cs_phone}</p>
+            <p class="cs-time">{$cs_time}</p>
+            <p class="cs-info">점심시간 12:30 - 13:30<br>토/일/공휴일 휴무</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="company-info">
+          <p>
+            <span>{$company_name}</span>
+            <span>대표: {$president_name}</span>
+            <span>사업자등록번호: {$company_registration_no}</span>
+            <span>통신판매업신고: {$telecommunication_no}</span>
+          </p>
+          <p>
+            <span>주소: {$address}</span>
+            <span>이메일: {$email}</span>
+          </p>
+        </div>
+        <p class="copyright">{$copyright}</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    // Main Visual Slider
+    new Swiper('.main-slider', {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      pagination: {
+        el: '.main-slider .swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.main-slider .swiper-button-next',
+        prevEl: '.main-slider .swiper-button-prev',
+      },
+    });
+
+    // Product Slider
+    new Swiper('.product-slider', {
+      slidesPerView: 2,
+      spaceBetween: 16,
+      navigation: {
+        nextEl: '.product-slider .swiper-button-next',
+        prevEl: '.product-slider .swiper-button-prev',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 24,
+        },
+      },
+    });
+
+    // Countdown Timer
+    function updateTimer() {
+      const endDate = new Date();
+      endDate.setDate(endDate.getDate() + 7);
+
+      const now = new Date();
+      const diff = endDate - now;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    // Search Toggle
+    document.querySelector('.btn-search').addEventListener('click', function() {
+      document.querySelector('.search-layer').classList.toggle('active');
+    });
+
+    // Mobile Menu Toggle
+    document.querySelector('.btn-menu').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.querySelector('.gnb').classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
