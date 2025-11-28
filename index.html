@@ -110,7 +110,7 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="slide-content">
-            <div class="slide-bg" style="background-image: url('/web/upload/main_visual_01.jpg');"></div>
+            <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1920&q=80');"></div>
             <div class="slide-text">
               <span class="subtitle">2024 WINTER COLLECTION</span>
               <h2 class="title">Timeless<br>Elegance</h2>
@@ -121,7 +121,7 @@
         </div>
         <div class="swiper-slide">
           <div class="slide-content">
-            <div class="slide-bg" style="background-image: url('/web/upload/main_visual_02.jpg');"></div>
+            <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1920&q=80');"></div>
             <div class="slide-text">
               <span class="subtitle">PREMIUM CASHMERE</span>
               <h2 class="title">Soft &<br>Luxurious</h2>
@@ -132,7 +132,7 @@
         </div>
         <div class="swiper-slide">
           <div class="slide-content">
-            <div class="slide-bg" style="background-image: url('/web/upload/main_visual_03.jpg');"></div>
+            <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80');"></div>
             <div class="slide-text">
               <span class="subtitle">SPECIAL SALE</span>
               <h2 class="title">Up to<br>50% OFF</h2>
@@ -154,7 +154,7 @@
       <div class="category-grid">
         <a href="/product/list.html?cate_no=10" class="category-item">
           <div class="category-img">
-            <img src="/web/upload/category_outer.jpg" alt="OUTER">
+            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80" alt="OUTER">
           </div>
           <div class="category-info">
             <h3>OUTER</h3>
@@ -163,7 +163,7 @@
         </a>
         <a href="/product/list.html?cate_no=11" class="category-item">
           <div class="category-img">
-            <img src="/web/upload/category_top.jpg" alt="TOP">
+            <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=600&q=80" alt="TOP">
           </div>
           <div class="category-info">
             <h3>TOP</h3>
@@ -172,7 +172,7 @@
         </a>
         <a href="/product/list.html?cate_no=12" class="category-item">
           <div class="category-img">
-            <img src="/web/upload/category_bottom.jpg" alt="BOTTOM">
+            <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&q=80" alt="BOTTOM">
           </div>
           <div class="category-info">
             <h3>BOTTOM</h3>
@@ -181,7 +181,7 @@
         </a>
         <a href="/product/list.html?cate_no=13" class="category-item">
           <div class="category-img">
-            <img src="/web/upload/category_acc.jpg" alt="ACCESSORY">
+            <img src="https://images.unsplash.com/photo-1611923134239-b9be5816e23c?w=600&q=80" alt="ACCESSORY">
           </div>
           <div class="category-info">
             <h3>ACC</h3>
@@ -201,6 +201,7 @@
         <a href="/product/list.html?cate_no=1" class="btn-view-all">VIEW ALL</a>
       </div>
 
+      <!-- 카페24 모듈 적용시 아래 module 속성 활성화 -->
       <div class="swiper product-slider" module="product_listmain_1">
         <!--@css(/css/module/product/listmain.css)-->
         <!-- $count = 8
@@ -208,48 +209,178 @@
              $basket_option = /product/basket_option.html -->
 
         <ul class="swiper-wrapper product-list">
-          <li class="swiper-slide product-item" id="anchorBoxId_{$product_no}">
+          <!-- 샘플 상품 1 -->
+          <li class="swiper-slide product-item">
             <div class="product-thumb">
-              <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}">
-                <img src="{$image_medium}" alt="{$seo_alt_tag}" class="thumb-img">
-                <img src="{$image_medium_2}" alt="{$seo_alt_tag}" class="thumb-img hover">
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=500&q=80" alt="Premium Wool Coat" class="thumb-img">
               </a>
               <div class="product-icons">
-                {$soldout_icon}
-                {$new_icon}
+                <span class="icon-new">NEW</span>
               </div>
               <div class="product-actions">
-                <button type="button" class="btn-wish">{$action_wishlist}
+                <button type="button" class="btn-wish">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
                 </button>
-                <button type="button" class="btn-cart">{$action_basket}
+                <button type="button" class="btn-cart">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                     <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-                <button type="button" class="btn-quick">{$zoom_icon}
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
                   </svg>
                 </button>
               </div>
             </div>
             <div class="product-info">
-              <p class="product-name">
-                <a href="/product/detail.html{$param}">{$product_name}</a>
-              </p>
+              <p class="product-name"><a href="/product/detail.html">Premium Wool Coat</a></p>
               <div class="product-price">
-                <span class="price-sale">{$disp_product_price}</span>
-                <span class="price-origin {$product_price_ref_display|display}">
-                  <del>{$txt_product_price_ref}</del>
-                </span>
-                <span class="discount-rate {$discount_rate_display|display}">{$discount_rate}%</span>
+                <span class="price-sale">₩298,000</span>
+                <span class="price-origin"><del>₩398,000</del></span>
+                <span class="discount-rate">25%</span>
               </div>
-              <ul class="product-colors" module="product_ListItem">
-                <li class="{$item_display|display}">{$item_content}</li>
-              </ul>
+            </div>
+          </li>
+
+          <!-- 샘플 상품 2 -->
+          <li class="swiper-slide product-item">
+            <div class="product-thumb">
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=500&q=80" alt="Cashmere Knit" class="thumb-img">
+              </a>
+              <div class="product-icons">
+                <span class="icon-new">NEW</span>
+              </div>
+              <div class="product-actions">
+                <button type="button" class="btn-wish">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn-cart">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="/product/detail.html">Cashmere Blend Knit</a></p>
+              <div class="product-price">
+                <span class="price-sale">₩158,000</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- 샘플 상품 3 -->
+          <li class="swiper-slide product-item">
+            <div class="product-thumb">
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&q=80" alt="Oversized Blazer" class="thumb-img">
+              </a>
+              <div class="product-actions">
+                <button type="button" class="btn-wish">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn-cart">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="/product/detail.html">Oversized Wool Blazer</a></p>
+              <div class="product-price">
+                <span class="price-sale">₩248,000</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- 샘플 상품 4 -->
+          <li class="swiper-slide product-item">
+            <div class="product-thumb">
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&q=80" alt="Minimal Dress" class="thumb-img">
+              </a>
+              <div class="product-icons">
+                <span class="icon-new">NEW</span>
+              </div>
+              <div class="product-actions">
+                <button type="button" class="btn-wish">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn-cart">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="/product/detail.html">Minimal Long Dress</a></p>
+              <div class="product-price">
+                <span class="price-sale">₩178,000</span>
+                <span class="price-origin"><del>₩228,000</del></span>
+                <span class="discount-rate">22%</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- 샘플 상품 5 -->
+          <li class="swiper-slide product-item">
+            <div class="product-thumb">
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1550614000-4895a10e1bfd?w=500&q=80" alt="Trench Coat" class="thumb-img">
+              </a>
+              <div class="product-actions">
+                <button type="button" class="btn-wish">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn-cart">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="/product/detail.html">Classic Trench Coat</a></p>
+              <div class="product-price">
+                <span class="price-sale">₩328,000</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- 샘플 상품 6 -->
+          <li class="swiper-slide product-item">
+            <div class="product-thumb">
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500&q=80" alt="Wide Pants" class="thumb-img">
+              </a>
+              <div class="product-actions">
+                <button type="button" class="btn-wish">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn-cart">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="/product/detail.html">Wide Leg Trousers</a></p>
+              <div class="product-price">
+                <span class="price-sale">₩128,000</span>
+              </div>
             </div>
           </li>
         </ul>
@@ -264,7 +395,7 @@
     <div class="container">
       <div class="banner-grid">
         <a href="/product/list.html?cate_no=20" class="banner-item banner-large">
-          <div class="banner-bg" style="background-image: url('/web/upload/banner_large.jpg');"></div>
+          <div class="banner-bg" style="background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&q=80');"></div>
           <div class="banner-content">
             <span class="banner-label">EXCLUSIVE</span>
             <h3 class="banner-title">Winter Essential<br>Collection</h3>
@@ -272,7 +403,7 @@
           </div>
         </a>
         <a href="/product/list.html?cate_no=21" class="banner-item banner-small">
-          <div class="banner-bg" style="background-image: url('/web/upload/banner_small_01.jpg');"></div>
+          <div class="banner-bg" style="background-image: url('https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=800&q=80');"></div>
           <div class="banner-content">
             <span class="banner-label">KNITWEAR</span>
             <h3 class="banner-title">Cozy Knit</h3>
@@ -280,7 +411,7 @@
           </div>
         </a>
         <a href="/product/list.html?cate_no=22" class="banner-item banner-small">
-          <div class="banner-bg" style="background-image: url('/web/upload/banner_small_02.jpg');"></div>
+          <div class="banner-bg" style="background-image: url('https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=800&q=80');"></div>
           <div class="banner-content">
             <span class="banner-label">CASHMERE</span>
             <h3 class="banner-title">Premium Wool</h3>
@@ -307,22 +438,20 @@
              $basket_option = /product/basket_option.html -->
 
         <ul class="product-list grid">
-          <li class="product-item" id="anchorBoxId_{$product_no}">
+          <!-- 베스트 상품 1 -->
+          <li class="product-item">
             <div class="product-thumb">
               <span class="rank-badge">BEST</span>
-              <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}">
-                <img src="{$image_medium}" alt="{$seo_alt_tag}" class="thumb-img">
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=500&q=80" alt="Wool Blend Coat" class="thumb-img">
               </a>
-              <div class="product-icons">
-                {$soldout_icon}
-              </div>
               <div class="product-actions">
-                <button type="button" class="btn-wish">{$action_wishlist}
+                <button type="button" class="btn-wish">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
                 </button>
-                <button type="button" class="btn-cart">{$action_basket}
+                <button type="button" class="btn-cart">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                     <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
                   </svg>
@@ -330,14 +459,206 @@
               </div>
             </div>
             <div class="product-info">
-              <p class="product-name">
-                <a href="/product/detail.html{$param}">{$product_name}</a>
-              </p>
+              <p class="product-name"><a href="/product/detail.html">Wool Blend Long Coat</a></p>
               <div class="product-price">
-                <span class="price-sale">{$disp_product_price}</span>
-                <span class="price-origin {$product_price_ref_display|display}">
-                  <del>{$txt_product_price_ref}</del>
-                </span>
+                <span class="price-sale">₩358,000</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- 베스트 상품 2 -->
+          <li class="product-item">
+            <div class="product-thumb">
+              <span class="rank-badge">BEST</span>
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=500&q=80" alt="Cashmere Sweater" class="thumb-img">
+              </a>
+              <div class="product-actions">
+                <button type="button" class="btn-wish">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn-cart">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="/product/detail.html">Pure Cashmere Sweater</a></p>
+              <div class="product-price">
+                <span class="price-sale">₩198,000</span>
+                <span class="price-origin"><del>₩268,000</del></span>
+              </div>
+            </div>
+          </li>
+
+          <!-- 베스트 상품 3 -->
+          <li class="product-item">
+            <div class="product-thumb">
+              <span class="rank-badge">BEST</span>
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1548624313-0396c75e4b1a?w=500&q=80" alt="Silk Blouse" class="thumb-img">
+              </a>
+              <div class="product-actions">
+                <button type="button" class="btn-wish">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn-cart">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="/product/detail.html">Silk Satin Blouse</a></p>
+              <div class="product-price">
+                <span class="price-sale">₩138,000</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- 베스트 상품 4 -->
+          <li class="product-item">
+            <div class="product-thumb">
+              <span class="rank-badge">BEST</span>
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&q=80" alt="Leather Jacket" class="thumb-img">
+              </a>
+              <div class="product-actions">
+                <button type="button" class="btn-wish">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn-cart">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="/product/detail.html">Premium Leather Jacket</a></p>
+              <div class="product-price">
+                <span class="price-sale">₩458,000</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- 베스트 상품 5 -->
+          <li class="product-item">
+            <div class="product-thumb">
+              <span class="rank-badge">BEST</span>
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?w=500&q=80" alt="Pleated Skirt" class="thumb-img">
+              </a>
+              <div class="product-actions">
+                <button type="button" class="btn-wish">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn-cart">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="/product/detail.html">Pleated Midi Skirt</a></p>
+              <div class="product-price">
+                <span class="price-sale">₩98,000</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- 베스트 상품 6 -->
+          <li class="product-item">
+            <div class="product-thumb">
+              <span class="rank-badge">BEST</span>
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=500&q=80" alt="Denim Jacket" class="thumb-img">
+              </a>
+              <div class="product-actions">
+                <button type="button" class="btn-wish">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn-cart">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="/product/detail.html">Vintage Denim Jacket</a></p>
+              <div class="product-price">
+                <span class="price-sale">₩168,000</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- 베스트 상품 7 -->
+          <li class="product-item">
+            <div class="product-thumb">
+              <span class="rank-badge">BEST</span>
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=500&q=80" alt="Linen Shirt" class="thumb-img">
+              </a>
+              <div class="product-actions">
+                <button type="button" class="btn-wish">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn-cart">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="/product/detail.html">Premium Linen Shirt</a></p>
+              <div class="product-price">
+                <span class="price-sale">₩88,000</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- 베스트 상품 8 -->
+          <li class="product-item">
+            <div class="product-thumb">
+              <span class="rank-badge">BEST</span>
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&q=80" alt="Tailored Pants" class="thumb-img">
+              </a>
+              <div class="product-actions">
+                <button type="button" class="btn-wish">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+                <button type="button" class="btn-cart">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="/product/detail.html">Tailored Slim Pants</a></p>
+              <div class="product-price">
+                <span class="price-sale">₩118,000</span>
               </div>
             </div>
           </li>
@@ -357,7 +678,7 @@
       <div class="lookbook-grid">
         <div class="lookbook-item">
           <div class="lookbook-img">
-            <img src="/web/upload/lookbook_01.jpg" alt="Lookbook 1">
+            <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600&q=80" alt="Lookbook 1">
           </div>
           <div class="lookbook-info">
             <span class="lookbook-num">01</span>
@@ -368,7 +689,7 @@
         </div>
         <div class="lookbook-item">
           <div class="lookbook-img">
-            <img src="/web/upload/lookbook_02.jpg" alt="Lookbook 2">
+            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&q=80" alt="Lookbook 2">
           </div>
           <div class="lookbook-info">
             <span class="lookbook-num">02</span>
@@ -379,7 +700,7 @@
         </div>
         <div class="lookbook-item">
           <div class="lookbook-img">
-            <img src="/web/upload/lookbook_03.jpg" alt="Lookbook 3">
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80" alt="Lookbook 3">
           </div>
           <div class="lookbook-info">
             <span class="lookbook-num">03</span>
@@ -407,25 +728,64 @@
              $basket_option = /product/basket_option.html -->
 
         <ul class="product-list mds">
-          <li class="product-item large" id="anchorBoxId_{$product_no}">
+          <li class="product-item large">
             <div class="product-thumb">
-              <a href="/product/detail.html{$param}">
-                <img src="{$image_big}" alt="{$seo_alt_tag}" class="thumb-img">
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1551489186-cf8726f514f8?w=600&q=80" alt="MD Pick 1" class="thumb-img">
               </a>
-              <div class="product-icons">
-                {$soldout_icon}
-                {$recommend_icon}
-              </div>
             </div>
             <div class="product-info">
               <span class="md-comment">"이번 시즌 꼭 가져야 할 아이템"</span>
-              <p class="product-name">
-                <a href="/product/detail.html{$param}">{$product_name}</a>
-              </p>
+              <p class="product-name"><a href="/product/detail.html">Oversized Wool Coat</a></p>
               <div class="product-price">
-                <span class="price-sale">{$disp_product_price}</span>
+                <span class="price-sale">₩398,000</span>
               </div>
-              <a href="/product/detail.html{$param}" class="btn-detail">VIEW DETAIL</a>
+              <a href="/product/detail.html" class="btn-detail">VIEW DETAIL</a>
+            </div>
+          </li>
+          <li class="product-item large">
+            <div class="product-thumb">
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=600&q=80" alt="MD Pick 2" class="thumb-img">
+              </a>
+            </div>
+            <div class="product-info">
+              <span class="md-comment">"데일리로 입기 좋은 베이직 니트"</span>
+              <p class="product-name"><a href="/product/detail.html">Merino Wool Knit</a></p>
+              <div class="product-price">
+                <span class="price-sale">₩148,000</span>
+              </div>
+              <a href="/product/detail.html" class="btn-detail">VIEW DETAIL</a>
+            </div>
+          </li>
+          <li class="product-item large">
+            <div class="product-thumb">
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1475180098004-ca77a66827be?w=600&q=80" alt="MD Pick 3" class="thumb-img">
+              </a>
+            </div>
+            <div class="product-info">
+              <span class="md-comment">"미니멀한 디자인의 정석"</span>
+              <p class="product-name"><a href="/product/detail.html">Classic Shirt Dress</a></p>
+              <div class="product-price">
+                <span class="price-sale">₩188,000</span>
+              </div>
+              <a href="/product/detail.html" class="btn-detail">VIEW DETAIL</a>
+            </div>
+          </li>
+          <li class="product-item large">
+            <div class="product-thumb">
+              <a href="/product/detail.html">
+                <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&q=80" alt="MD Pick 4" class="thumb-img">
+              </a>
+            </div>
+            <div class="product-info">
+              <span class="md-comment">"편안함과 스타일을 동시에"</span>
+              <p class="product-name"><a href="/product/detail.html">Cashmere Cardigan</a></p>
+              <div class="product-price">
+                <span class="price-sale">₩228,000</span>
+              </div>
+              <a href="/product/detail.html" class="btn-detail">VIEW DETAIL</a>
             </div>
           </li>
         </ul>
@@ -435,7 +795,7 @@
 
   <!-- ========== SPECIAL OFFER ========== -->
   <section class="special-offer">
-    <div class="offer-bg" style="background-image: url('/web/upload/special_offer_bg.jpg');"></div>
+    <div class="offer-bg" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80');"></div>
     <div class="container">
       <div class="offer-content">
         <span class="offer-label">LIMITED TIME OFFER</span>
@@ -474,7 +834,7 @@
 
       <div class="instagram-grid">
         <a href="https://instagram.com" target="_blank" class="insta-item">
-          <img src="/web/upload/insta_01.jpg" alt="Instagram">
+          <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&q=80" alt="Instagram">
           <div class="insta-overlay">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
@@ -482,7 +842,7 @@
           </div>
         </a>
         <a href="https://instagram.com" target="_blank" class="insta-item">
-          <img src="/web/upload/insta_02.jpg" alt="Instagram">
+          <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&q=80" alt="Instagram">
           <div class="insta-overlay">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
@@ -490,7 +850,7 @@
           </div>
         </a>
         <a href="https://instagram.com" target="_blank" class="insta-item">
-          <img src="/web/upload/insta_03.jpg" alt="Instagram">
+          <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=80" alt="Instagram">
           <div class="insta-overlay">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
@@ -498,7 +858,7 @@
           </div>
         </a>
         <a href="https://instagram.com" target="_blank" class="insta-item">
-          <img src="/web/upload/insta_04.jpg" alt="Instagram">
+          <img src="https://images.unsplash.com/photo-1479064555552-3ef4979f8908?w=400&q=80" alt="Instagram">
           <div class="insta-overlay">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
@@ -506,7 +866,7 @@
           </div>
         </a>
         <a href="https://instagram.com" target="_blank" class="insta-item">
-          <img src="/web/upload/insta_05.jpg" alt="Instagram">
+          <img src="https://images.unsplash.com/photo-1485125639709-a60c3a500bf1?w=400&q=80" alt="Instagram">
           <div class="insta-overlay">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
@@ -514,7 +874,7 @@
           </div>
         </a>
         <a href="https://instagram.com" target="_blank" class="insta-item">
-          <img src="/web/upload/insta_06.jpg" alt="Instagram">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&q=80" alt="Instagram">
           <div class="insta-overlay">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
@@ -637,8 +997,8 @@
           <!-- 고객센터 -->
           <div class="footer-col cs">
             <h3 class="footer-title">CUSTOMER CENTER</h3>
-            <p class="cs-phone">{$cs_phone}</p>
-            <p class="cs-time">{$cs_time}</p>
+            <p class="cs-phone">1588-0000</p>
+            <p class="cs-time">평일 10:00 - 18:00</p>
             <p class="cs-info">점심시간 12:30 - 13:30<br>토/일/공휴일 휴무</p>
           </div>
         </div>
@@ -649,24 +1009,23 @@
       <div class="container">
         <div class="company-info">
           <p>
-            <span>{$company_name}</span>
-            <span>대표: {$president_name}</span>
-            <span>사업자등록번호: {$company_registration_no}</span>
-            <span>통신판매업신고: {$telecommunication_no}</span>
+            <span>MAISON Inc.</span>
+            <span>대표: 홍길동</span>
+            <span>사업자등록번호: 123-45-67890</span>
+            <span>통신판매업신고: 2024-서울강남-0000</span>
           </p>
           <p>
-            <span>주소: {$address}</span>
-            <span>이메일: {$email}</span>
+            <span>주소: 서울특별시 강남구 테헤란로 123</span>
+            <span>이메일: help@maison.co.kr</span>
           </p>
         </div>
-        <p class="copyright">{$copyright}</p>
+        <p class="copyright">© 2024 MAISON. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="/js/main.js"></script>
   <script>
     // Main Visual Slider
     new Swiper('.main-slider', {
@@ -740,6 +1099,16 @@
     document.querySelector('.btn-menu').addEventListener('click', function() {
       this.classList.toggle('active');
       document.querySelector('.gnb').classList.toggle('active');
+    });
+
+    // Header Scroll Effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
     });
   </script>
 
