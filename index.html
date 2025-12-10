@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MAISON - Premium Fashion Store</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="/skin/layout/css/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -19,6 +19,7 @@
           <span>FREE SHIPPING ON ORDERS OVER ₩100,000</span>
         </div>
         <div class="header-top__right" module="Layout_stateLogon">
+          <!--@css(/css/module/layout/stateLogon.css)-->
           <div class="xans-logged-out">
             <a href="/member/login.html">LOGIN</a>
             <a href="/member/join.html">JOIN</a>
@@ -34,18 +35,17 @@
 
     <div class="header-main">
       <div class="container">
-        <!-- 로고 -->
         <h1 class="logo">
           <a href="/">MAISON</a>
         </h1>
 
-        <!-- 메인 네비게이션 -->
         <nav class="gnb" module="Layout_category">
+          <!--@css(/css/module/layout/category.css)-->
           <ul class="gnb__list">
             <li class="gnb__item {$display_group}">
               <a href="{$link_category}" class="gnb__link">{$name}</a>
-              <div class="gnb__sub">
-                <ul module="Layout_category_sub">
+              <div class="gnb__sub" module="Layout_category_sub">
+                <ul>
                   <li class="{$display_group}">
                     <a href="{$link_category}">{$name}</a>
                   </li>
@@ -55,10 +55,9 @@
           </ul>
         </nav>
 
-        <!-- 유틸 메뉴 -->
         <div class="header-util">
-          <!-- 검색 -->
-          <div class="util-search" module="searchHeader">
+          <div class="util-search" module="Layout_searchHeader">
+            <!--@css(/css/module/layout/searchHeader.css)-->
             <button type="button" class="btn-search" aria-label="검색">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
@@ -76,15 +75,14 @@
             </div>
           </div>
 
-          <!-- 관심상품 -->
           <a href="/myshop/wish_list.html" class="util-wish" aria-label="관심상품">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
             </svg>
           </a>
 
-          <!-- 장바구니 -->
-          <div class="util-cart" module="Layout_shoppingInfo">
+          <div class="util-cart" module="Layout_shoppingBag">
+            <!--@css(/css/module/layout/shoppingBag.css)-->
             <a href="/order/basket.html" aria-label="장바구니">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
@@ -93,18 +91,15 @@
             </a>
           </div>
 
-          <!-- 모바일 메뉴 -->
           <button type="button" class="btn-menu" aria-label="메뉴">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
           </button>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- ========== MAIN VISUAL ========== -->
+  <!-- ========== MAIN VISUAL (직접 이미지 등록) ========== -->
   <section class="main-visual">
     <div class="swiper main-slider">
       <div class="swiper-wrapper">
@@ -192,7 +187,7 @@
     </div>
   </section>
 
-  <!-- ========== NEW ARRIVALS ========== -->
+  <!-- ========== NEW ARRIVALS (카페24 모듈) ========== -->
   <section class="product-section new-arrivals">
     <div class="container">
       <div class="section-header">
@@ -201,30 +196,26 @@
         <a href="/product/list.html?cate_no=1" class="btn-view-all">VIEW ALL</a>
       </div>
 
-      <!-- 카페24 모듈 적용시 아래 module 속성 활성화 -->
-      <div class="swiper product-slider" module="product_listmain_1">
-        <!--@css(/css/module/product/listmain.css)-->
-        <!-- $count = 8
-             $basket_result = /product/add_basket.html
-             $basket_option = /product/basket_option.html -->
-
-        <ul class="swiper-wrapper product-list">
-          <!-- 샘플 상품 1 -->
-          <li class="swiper-slide product-item">
+      <div class="swiper product-slider">
+        <ul class="swiper-wrapper product-list" module="product_listmain_1">
+          <!--@css(/css/module/product/listmain.css)-->
+          <!--@js(/js/module/product/listmain.js)-->
+          <!-- $count = 8 -->
+          <li class="swiper-slide product-item" id="anchorBoxId_{$product_no}">
             <div class="product-thumb">
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=500&q=80" alt="Premium Wool Coat" class="thumb-img">
+              <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}">
+                <img src="{$image_medium}" alt="{$seo_alt_tag}" class="thumb-img">
               </a>
               <div class="product-icons">
-                <span class="icon-new">NEW</span>
+                {$soldout_icon}{$new_icon}{$recommend_icon}
               </div>
               <div class="product-actions">
-                <button type="button" class="btn-wish">
+                <button type="button" class="btn-wish" onclick="{$action_wishlist}">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
                 </button>
-                <button type="button" class="btn-cart">
+                <button type="button" class="btn-cart" onclick="{$action_basket}">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                     <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
                   </svg>
@@ -232,154 +223,13 @@
               </div>
             </div>
             <div class="product-info">
-              <p class="product-name"><a href="/product/detail.html">Premium Wool Coat</a></p>
+              <p class="product-name">
+                <a href="/product/detail.html{$param}">{$product_name}</a>
+              </p>
               <div class="product-price">
-                <span class="price-sale">₩298,000</span>
-                <span class="price-origin"><del>₩398,000</del></span>
-                <span class="discount-rate">25%</span>
-              </div>
-            </div>
-          </li>
-
-          <!-- 샘플 상품 2 -->
-          <li class="swiper-slide product-item">
-            <div class="product-thumb">
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=500&q=80" alt="Cashmere Knit" class="thumb-img">
-              </a>
-              <div class="product-icons">
-                <span class="icon-new">NEW</span>
-              </div>
-              <div class="product-actions">
-                <button type="button" class="btn-wish">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                  </svg>
-                </button>
-                <button type="button" class="btn-cart">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <p class="product-name"><a href="/product/detail.html">Cashmere Blend Knit</a></p>
-              <div class="product-price">
-                <span class="price-sale">₩158,000</span>
-              </div>
-            </div>
-          </li>
-
-          <!-- 샘플 상품 3 -->
-          <li class="swiper-slide product-item">
-            <div class="product-thumb">
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&q=80" alt="Oversized Blazer" class="thumb-img">
-              </a>
-              <div class="product-actions">
-                <button type="button" class="btn-wish">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                  </svg>
-                </button>
-                <button type="button" class="btn-cart">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <p class="product-name"><a href="/product/detail.html">Oversized Wool Blazer</a></p>
-              <div class="product-price">
-                <span class="price-sale">₩248,000</span>
-              </div>
-            </div>
-          </li>
-
-          <!-- 샘플 상품 4 -->
-          <li class="swiper-slide product-item">
-            <div class="product-thumb">
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&q=80" alt="Minimal Dress" class="thumb-img">
-              </a>
-              <div class="product-icons">
-                <span class="icon-new">NEW</span>
-              </div>
-              <div class="product-actions">
-                <button type="button" class="btn-wish">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                  </svg>
-                </button>
-                <button type="button" class="btn-cart">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <p class="product-name"><a href="/product/detail.html">Minimal Long Dress</a></p>
-              <div class="product-price">
-                <span class="price-sale">₩178,000</span>
-                <span class="price-origin"><del>₩228,000</del></span>
-                <span class="discount-rate">22%</span>
-              </div>
-            </div>
-          </li>
-
-          <!-- 샘플 상품 5 -->
-          <li class="swiper-slide product-item">
-            <div class="product-thumb">
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1550614000-4895a10e1bfd?w=500&q=80" alt="Trench Coat" class="thumb-img">
-              </a>
-              <div class="product-actions">
-                <button type="button" class="btn-wish">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                  </svg>
-                </button>
-                <button type="button" class="btn-cart">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <p class="product-name"><a href="/product/detail.html">Classic Trench Coat</a></p>
-              <div class="product-price">
-                <span class="price-sale">₩328,000</span>
-              </div>
-            </div>
-          </li>
-
-          <!-- 샘플 상품 6 -->
-          <li class="swiper-slide product-item">
-            <div class="product-thumb">
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500&q=80" alt="Wide Pants" class="thumb-img">
-              </a>
-              <div class="product-actions">
-                <button type="button" class="btn-wish">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                  </svg>
-                </button>
-                <button type="button" class="btn-cart">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <p class="product-name"><a href="/product/detail.html">Wide Leg Trousers</a></p>
-              <div class="product-price">
-                <span class="price-sale">₩128,000</span>
+                <span class="price-sale">{$product_sale_price}</span>
+                <span class="price-origin {$product_price_display|display}"><del>{$product_price}</del></span>
+                <span class="discount-rate {$discount_rate_display|display}">{$discount_rate}%</span>
               </div>
             </div>
           </li>
@@ -422,7 +272,7 @@
     </div>
   </section>
 
-  <!-- ========== BEST SELLERS ========== -->
+  <!-- ========== BEST SELLERS (카페24 모듈) ========== -->
   <section class="product-section best-sellers">
     <div class="container">
       <div class="section-header">
@@ -431,27 +281,26 @@
         <a href="/product/list.html?cate_no=2" class="btn-view-all">VIEW ALL</a>
       </div>
 
-      <div class="product-grid" module="product_listmain_2">
-        <!--@css(/css/module/product/listmain.css)-->
-        <!-- $count = 8
-             $basket_result = /product/add_basket.html
-             $basket_option = /product/basket_option.html -->
-
-        <ul class="product-list grid">
-          <!-- 베스트 상품 1 -->
-          <li class="product-item">
+      <div class="product-grid">
+        <ul class="product-list grid" module="product_listmain_2">
+          <!--@css(/css/module/product/listmain.css)-->
+          <!-- $count = 8 -->
+          <li class="product-item" id="anchorBoxId_{$product_no}">
             <div class="product-thumb">
               <span class="rank-badge">BEST</span>
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=500&q=80" alt="Wool Blend Coat" class="thumb-img">
+              <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}">
+                <img src="{$image_medium}" alt="{$seo_alt_tag}" class="thumb-img">
               </a>
+              <div class="product-icons">
+                {$soldout_icon}
+              </div>
               <div class="product-actions">
-                <button type="button" class="btn-wish">
+                <button type="button" class="btn-wish" onclick="{$action_wishlist}">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                   </svg>
                 </button>
-                <button type="button" class="btn-cart">
+                <button type="button" class="btn-cart" onclick="{$action_basket}">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                     <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
                   </svg>
@@ -459,206 +308,12 @@
               </div>
             </div>
             <div class="product-info">
-              <p class="product-name"><a href="/product/detail.html">Wool Blend Long Coat</a></p>
+              <p class="product-name">
+                <a href="/product/detail.html{$param}">{$product_name}</a>
+              </p>
               <div class="product-price">
-                <span class="price-sale">₩358,000</span>
-              </div>
-            </div>
-          </li>
-
-          <!-- 베스트 상품 2 -->
-          <li class="product-item">
-            <div class="product-thumb">
-              <span class="rank-badge">BEST</span>
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=500&q=80" alt="Cashmere Sweater" class="thumb-img">
-              </a>
-              <div class="product-actions">
-                <button type="button" class="btn-wish">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                  </svg>
-                </button>
-                <button type="button" class="btn-cart">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <p class="product-name"><a href="/product/detail.html">Pure Cashmere Sweater</a></p>
-              <div class="product-price">
-                <span class="price-sale">₩198,000</span>
-                <span class="price-origin"><del>₩268,000</del></span>
-              </div>
-            </div>
-          </li>
-
-          <!-- 베스트 상품 3 -->
-          <li class="product-item">
-            <div class="product-thumb">
-              <span class="rank-badge">BEST</span>
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1548624313-0396c75e4b1a?w=500&q=80" alt="Silk Blouse" class="thumb-img">
-              </a>
-              <div class="product-actions">
-                <button type="button" class="btn-wish">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                  </svg>
-                </button>
-                <button type="button" class="btn-cart">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <p class="product-name"><a href="/product/detail.html">Silk Satin Blouse</a></p>
-              <div class="product-price">
-                <span class="price-sale">₩138,000</span>
-              </div>
-            </div>
-          </li>
-
-          <!-- 베스트 상품 4 -->
-          <li class="product-item">
-            <div class="product-thumb">
-              <span class="rank-badge">BEST</span>
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&q=80" alt="Leather Jacket" class="thumb-img">
-              </a>
-              <div class="product-actions">
-                <button type="button" class="btn-wish">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                  </svg>
-                </button>
-                <button type="button" class="btn-cart">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <p class="product-name"><a href="/product/detail.html">Premium Leather Jacket</a></p>
-              <div class="product-price">
-                <span class="price-sale">₩458,000</span>
-              </div>
-            </div>
-          </li>
-
-          <!-- 베스트 상품 5 -->
-          <li class="product-item">
-            <div class="product-thumb">
-              <span class="rank-badge">BEST</span>
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?w=500&q=80" alt="Pleated Skirt" class="thumb-img">
-              </a>
-              <div class="product-actions">
-                <button type="button" class="btn-wish">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                  </svg>
-                </button>
-                <button type="button" class="btn-cart">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <p class="product-name"><a href="/product/detail.html">Pleated Midi Skirt</a></p>
-              <div class="product-price">
-                <span class="price-sale">₩98,000</span>
-              </div>
-            </div>
-          </li>
-
-          <!-- 베스트 상품 6 -->
-          <li class="product-item">
-            <div class="product-thumb">
-              <span class="rank-badge">BEST</span>
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=500&q=80" alt="Denim Jacket" class="thumb-img">
-              </a>
-              <div class="product-actions">
-                <button type="button" class="btn-wish">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                  </svg>
-                </button>
-                <button type="button" class="btn-cart">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <p class="product-name"><a href="/product/detail.html">Vintage Denim Jacket</a></p>
-              <div class="product-price">
-                <span class="price-sale">₩168,000</span>
-              </div>
-            </div>
-          </li>
-
-          <!-- 베스트 상품 7 -->
-          <li class="product-item">
-            <div class="product-thumb">
-              <span class="rank-badge">BEST</span>
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=500&q=80" alt="Linen Shirt" class="thumb-img">
-              </a>
-              <div class="product-actions">
-                <button type="button" class="btn-wish">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                  </svg>
-                </button>
-                <button type="button" class="btn-cart">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <p class="product-name"><a href="/product/detail.html">Premium Linen Shirt</a></p>
-              <div class="product-price">
-                <span class="price-sale">₩88,000</span>
-              </div>
-            </div>
-          </li>
-
-          <!-- 베스트 상품 8 -->
-          <li class="product-item">
-            <div class="product-thumb">
-              <span class="rank-badge">BEST</span>
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&q=80" alt="Tailored Pants" class="thumb-img">
-              </a>
-              <div class="product-actions">
-                <button type="button" class="btn-wish">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                  </svg>
-                </button>
-                <button type="button" class="btn-cart">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <p class="product-name"><a href="/product/detail.html">Tailored Slim Pants</a></p>
-              <div class="product-price">
-                <span class="price-sale">₩118,000</span>
+                <span class="price-sale">{$product_sale_price}</span>
+                <span class="price-origin {$product_price_display|display}"><del>{$product_price}</del></span>
               </div>
             </div>
           </li>
@@ -674,7 +329,6 @@
         <h2 class="section-title">LOOKBOOK</h2>
         <p class="section-desc">이번 시즌 스타일링 제안</p>
       </div>
-
       <div class="lookbook-grid">
         <div class="lookbook-item">
           <div class="lookbook-img">
@@ -713,7 +367,7 @@
     </div>
   </section>
 
-  <!-- ========== MD'S PICK ========== -->
+  <!-- ========== MD'S PICK (카페24 모듈) ========== -->
   <section class="product-section mds-pick">
     <div class="container">
       <div class="section-header">
@@ -721,71 +375,28 @@
         <p class="section-desc">MD가 추천하는 이번 주 아이템</p>
       </div>
 
-      <div class="mds-grid" module="product_listmain_3">
-        <!--@css(/css/module/product/listmain.css)-->
-        <!-- $count = 4
-             $basket_result = /product/add_basket.html
-             $basket_option = /product/basket_option.html -->
-
-        <ul class="product-list mds">
-          <li class="product-item large">
+      <div class="mds-grid">
+        <ul class="product-list mds" module="product_listmain_3">
+          <!--@css(/css/module/product/listmain.css)-->
+          <!-- $count = 4 -->
+          <li class="product-item large" id="anchorBoxId_{$product_no}">
             <div class="product-thumb">
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1551489186-cf8726f514f8?w=600&q=80" alt="MD Pick 1" class="thumb-img">
+              <a href="/product/detail.html{$param}">
+                <img src="{$image_big}" alt="{$seo_alt_tag}" class="thumb-img">
               </a>
+              <div class="product-icons">
+                {$soldout_icon}{$recommend_icon}
+              </div>
             </div>
             <div class="product-info">
-              <span class="md-comment">"이번 시즌 꼭 가져야 할 아이템"</span>
-              <p class="product-name"><a href="/product/detail.html">Oversized Wool Coat</a></p>
+              <span class="md-comment">"이번 시즌 추천 아이템"</span>
+              <p class="product-name">
+                <a href="/product/detail.html{$param}">{$product_name}</a>
+              </p>
               <div class="product-price">
-                <span class="price-sale">₩398,000</span>
+                <span class="price-sale">{$product_sale_price}</span>
               </div>
-              <a href="/product/detail.html" class="btn-detail">VIEW DETAIL</a>
-            </div>
-          </li>
-          <li class="product-item large">
-            <div class="product-thumb">
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=600&q=80" alt="MD Pick 2" class="thumb-img">
-              </a>
-            </div>
-            <div class="product-info">
-              <span class="md-comment">"데일리로 입기 좋은 베이직 니트"</span>
-              <p class="product-name"><a href="/product/detail.html">Merino Wool Knit</a></p>
-              <div class="product-price">
-                <span class="price-sale">₩148,000</span>
-              </div>
-              <a href="/product/detail.html" class="btn-detail">VIEW DETAIL</a>
-            </div>
-          </li>
-          <li class="product-item large">
-            <div class="product-thumb">
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1475180098004-ca77a66827be?w=600&q=80" alt="MD Pick 3" class="thumb-img">
-              </a>
-            </div>
-            <div class="product-info">
-              <span class="md-comment">"미니멀한 디자인의 정석"</span>
-              <p class="product-name"><a href="/product/detail.html">Classic Shirt Dress</a></p>
-              <div class="product-price">
-                <span class="price-sale">₩188,000</span>
-              </div>
-              <a href="/product/detail.html" class="btn-detail">VIEW DETAIL</a>
-            </div>
-          </li>
-          <li class="product-item large">
-            <div class="product-thumb">
-              <a href="/product/detail.html">
-                <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&q=80" alt="MD Pick 4" class="thumb-img">
-              </a>
-            </div>
-            <div class="product-info">
-              <span class="md-comment">"편안함과 스타일을 동시에"</span>
-              <p class="product-name"><a href="/product/detail.html">Cashmere Cardigan</a></p>
-              <div class="product-price">
-                <span class="price-sale">₩228,000</span>
-              </div>
-              <a href="/product/detail.html" class="btn-detail">VIEW DETAIL</a>
+              <a href="/product/detail.html{$param}" class="btn-detail">VIEW DETAIL</a>
             </div>
           </li>
         </ul>
@@ -831,55 +442,30 @@
         <h2 class="section-title">@MAISON_OFFICIAL</h2>
         <p class="section-desc">Follow us on Instagram</p>
       </div>
-
       <div class="instagram-grid">
         <a href="https://instagram.com" target="_blank" class="insta-item">
           <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&q=80" alt="Instagram">
-          <div class="insta-overlay">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </div>
+          <div class="insta-overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
         </a>
         <a href="https://instagram.com" target="_blank" class="insta-item">
           <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&q=80" alt="Instagram">
-          <div class="insta-overlay">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </div>
+          <div class="insta-overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
         </a>
         <a href="https://instagram.com" target="_blank" class="insta-item">
           <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=80" alt="Instagram">
-          <div class="insta-overlay">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </div>
+          <div class="insta-overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
         </a>
         <a href="https://instagram.com" target="_blank" class="insta-item">
           <img src="https://images.unsplash.com/photo-1479064555552-3ef4979f8908?w=400&q=80" alt="Instagram">
-          <div class="insta-overlay">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </div>
+          <div class="insta-overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
         </a>
         <a href="https://instagram.com" target="_blank" class="insta-item">
           <img src="https://images.unsplash.com/photo-1485125639709-a60c3a500bf1?w=400&q=80" alt="Instagram">
-          <div class="insta-overlay">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </div>
+          <div class="insta-overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
         </a>
         <a href="https://instagram.com" target="_blank" class="insta-item">
           <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&q=80" alt="Instagram">
-          <div class="insta-overlay">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </div>
+          <div class="insta-overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
         </a>
       </div>
     </div>
@@ -932,34 +518,18 @@
   <!-- ========== FOOTER ========== -->
   <footer class="footer" module="Layout_footer">
     <!--@css(/css/module/layout/footer.css)-->
-
     <div class="footer-top">
       <div class="container">
         <div class="footer-grid">
-          <!-- 브랜드 정보 -->
           <div class="footer-col brand">
             <h2 class="footer-logo">MAISON</h2>
             <p class="footer-slogan">Timeless Style, Modern Elegance</p>
             <div class="footer-social">
-              <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-              </a>
-              <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
-              </a>
-              <a href="https://youtube.com" target="_blank" aria-label="YouTube">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-              </a>
+              <a href="https://instagram.com" target="_blank" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg></a>
+              <a href="https://facebook.com" target="_blank" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+              <a href="https://youtube.com" target="_blank" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/></svg></a>
             </div>
           </div>
-
-          <!-- 쇼핑 정보 -->
           <div class="footer-col">
             <h3 class="footer-title">SHOP</h3>
             <ul class="footer-links">
@@ -970,53 +540,46 @@
               <li><a href="/product/list.html?cate_no=99">SALE</a></li>
             </ul>
           </div>
-
-          <!-- 고객 서비스 -->
           <div class="footer-col">
             <h3 class="footer-title">HELP</h3>
             <ul class="footer-links">
-              <li><a href="/board/faq.html">FAQ</a></li>
-              <li><a href="/order/order.html">주문조회</a></li>
-              <li><a href="/board/notice.html">공지사항</a></li>
-              <li><a href="/board/qna.html">1:1 문의</a></li>
-              <li><a href="/shop/info.html">이용안내</a></li>
+              <li><a href="/board/free/list.html?board_no=4">FAQ</a></li>
+              <li><a href="/order/list.html">주문조회</a></li>
+              <li><a href="/board/free/list.html?board_no=1">공지사항</a></li>
+              <li><a href="/board/free/write.html?board_no=5">1:1 문의</a></li>
+              <li><a href="/shopinfo/guide.html">이용안내</a></li>
             </ul>
           </div>
-
-          <!-- 회사 정보 -->
           <div class="footer-col">
             <h3 class="footer-title">COMPANY</h3>
             <ul class="footer-links">
-              <li><a href="/shop/about.html">ABOUT US</a></li>
-              <li><a href="/shop/guide.html">STORE INFO</a></li>
-              <li><a href="/shop/privacy.html">개인정보처리방침</a></li>
-              <li><a href="/shop/agreement.html">이용약관</a></li>
+              <li><a href="/shopinfo/company.html">ABOUT US</a></li>
+              <li><a href="/shopinfo/map.html">STORE INFO</a></li>
+              <li><a href="/shopinfo/privacy.html">개인정보처리방침</a></li>
+              <li><a href="/shopinfo/agreement.html">이용약관</a></li>
             </ul>
           </div>
-
-          <!-- 고객센터 -->
           <div class="footer-col cs">
             <h3 class="footer-title">CUSTOMER CENTER</h3>
-            <p class="cs-phone">1588-0000</p>
-            <p class="cs-time">평일 10:00 - 18:00</p>
+            <p class="cs-phone">{$shop_cs_phone}</p>
+            <p class="cs-time">{$shop_cs_time}</p>
             <p class="cs-info">점심시간 12:30 - 13:30<br>토/일/공휴일 휴무</p>
           </div>
         </div>
       </div>
     </div>
-
     <div class="footer-bottom">
       <div class="container">
         <div class="company-info">
           <p>
-            <span>MAISON Inc.</span>
-            <span>대표: 홍길동</span>
-            <span>사업자등록번호: 123-45-67890</span>
-            <span>통신판매업신고: 2024-서울강남-0000</span>
+            <span>{$shop_name}</span>
+            <span>대표: {$shop_president}</span>
+            <span>사업자등록번호: {$shop_business_num}</span>
+            <span>통신판매업신고: {$shop_sales_num}</span>
           </p>
           <p>
-            <span>주소: 서울특별시 강남구 테헤란로 123</span>
-            <span>이메일: help@maison.co.kr</span>
+            <span>주소: {$shop_address}</span>
+            <span>이메일: {$shop_email}</span>
           </p>
         </div>
         <p class="copyright">© 2024 MAISON. All Rights Reserved.</p>
@@ -1030,85 +593,45 @@
     // Main Visual Slider
     new Swiper('.main-slider', {
       loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
+      autoplay: { delay: 5000, disableOnInteraction: false },
       effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
-      pagination: {
-        el: '.main-slider .swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.main-slider .swiper-button-next',
-        prevEl: '.main-slider .swiper-button-prev',
-      },
+      fadeEffect: { crossFade: true },
+      pagination: { el: '.main-slider .swiper-pagination', clickable: true },
+      navigation: { nextEl: '.main-slider .swiper-button-next', prevEl: '.main-slider .swiper-button-prev' }
     });
 
     // Product Slider
     new Swiper('.product-slider', {
       slidesPerView: 2,
       spaceBetween: 16,
-      navigation: {
-        nextEl: '.product-slider .swiper-button-next',
-        prevEl: '.product-slider .swiper-button-prev',
-      },
-      breakpoints: {
-        640: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-        },
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 24,
-        },
-      },
+      navigation: { nextEl: '.product-slider .swiper-button-next', prevEl: '.product-slider .swiper-button-prev' },
+      breakpoints: { 640: { slidesPerView: 3, spaceBetween: 20 }, 1024: { slidesPerView: 4, spaceBetween: 24 } }
     });
 
     // Countdown Timer
     function updateTimer() {
       const endDate = new Date();
       endDate.setDate(endDate.getDate() + 7);
-
       const now = new Date();
       const diff = endDate - now;
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      document.getElementById('days').textContent = String(days).padStart(2, '0');
-      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+      document.getElementById('days').textContent = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+      document.getElementById('hours').textContent = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
     }
-
     setInterval(updateTimer, 1000);
     updateTimer();
 
-    // Search Toggle
-    document.querySelector('.btn-search').addEventListener('click', function() {
+    // UI Interactions
+    document.querySelector('.btn-search')?.addEventListener('click', function() {
       document.querySelector('.search-layer').classList.toggle('active');
     });
-
-    // Mobile Menu Toggle
-    document.querySelector('.btn-menu').addEventListener('click', function() {
+    document.querySelector('.btn-menu')?.addEventListener('click', function() {
       this.classList.toggle('active');
       document.querySelector('.gnb').classList.toggle('active');
     });
-
-    // Header Scroll Effect
     window.addEventListener('scroll', function() {
-      const header = document.querySelector('.header');
-      if (window.scrollY > 100) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+      document.querySelector('.header').classList.toggle('scrolled', window.scrollY > 100);
     });
   </script>
 

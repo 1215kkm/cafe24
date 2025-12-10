@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAISON - Premium Fashion Store</title>
+  <link rel="stylesheet" href="/skin/layout/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="subpage">
+
+  <!-- ========== HEADER ========== -->
+  <header class="header">
+    <div class="header-top">
+      <div class="container">
+        <div class="header-top__left">
+          <span>FREE SHIPPING ON ORDERS OVER ₩100,000</span>
+        </div>
+        <div class="header-top__right" module="Layout_stateLogon">
+          <!--@css(/css/module/layout/stateLogon.css)-->
+          <div class="xans-logged-out">
+            <a href="/member/login.html">LOGIN</a>
+            <a href="/member/join.html">JOIN</a>
+          </div>
+          <div class="xans-logged-in">
+            <span>{$name}님</span>
+            <a href="/myshop/order/list.html">MYPAGE</a>
+            <a href="{$action_logout}">LOGOUT</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-main">
+      <div class="container">
+        <h1 class="logo">
+          <a href="/">MAISON</a>
+        </h1>
+
+        <nav class="gnb" module="Layout_category">
+          <!--@css(/css/module/layout/category.css)-->
+          <ul class="gnb__list">
+            <li class="gnb__item {$display_group}">
+              <a href="{$link_category}" class="gnb__link">{$name}</a>
+              <div class="gnb__sub" module="Layout_category_sub">
+                <ul>
+                  <li class="{$display_group}">
+                    <a href="{$link_category}">{$name}</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-util">
+          <div class="util-search" module="Layout_searchHeader">
+            <!--@css(/css/module/layout/searchHeader.css)-->
+            <button type="button" class="btn-search" aria-label="검색">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+              </svg>
+            </button>
+            <div class="search-layer">
+              <form action="/product/search.html" method="get">
+                <input type="text" name="keyword" placeholder="Search...">
+                <button type="submit">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <a href="/myshop/wish_list.html" class="util-wish" aria-label="관심상품">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </a>
+
+          <div class="util-cart" module="Layout_shoppingBag">
+            <!--@css(/css/module/layout/shoppingBag.css)-->
+            <a href="/order/basket.html" aria-label="장바구니">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+              </svg>
+              <span class="cart-count">{$basket_count}</span>
+            </a>
+          </div>
+
+          <button type="button" class="btn-menu" aria-label="메뉴">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== BREADCRUMB ========== -->
+  <nav class="breadcrumb" module="product_headcategory">
+    <!--@css(/css/module/product/headcategory.css)-->
+    <div class="container">
+      <ol class="breadcrumb__list">
+        <li><a href="/">HOME</a></li>
+        <li class="{$display}"><a href="{$link_category}">{$category_name}</a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ========== SUB CONTENT AREA ========== -->
+  <main class="sub-content">
+    <div class="container">
+
+      <div class="content-layout">
+        <!-- SIDEBAR (카테고리 리스트용 - 필요시 사용) -->
+        <aside class="sidebar" module="product_menupackage">
+          <!--@css(/css/module/product/menupackage.css)-->
+          <div class="sidebar-category">
+            <h2 class="sidebar-title">CATEGORY</h2>
+            <ul class="category-list">
+              <li class="category-item {$display}">
+                <a href="{$link_category}" class="{$current}">{$category_name}</a>
+                <ul class="subcategory-list" module="product_menupackage_sub">
+                  <li class="{$display}">
+                    <a href="{$link_category}" class="{$current}">{$category_name}</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <section class="content-main">
+          <!-- PAGE TITLE -->
+          <div class="page-header" module="product_headcategory">
+            <h1 class="page-title">{$category_title_name}</h1>
+            <p class="page-desc">{$category_description}</p>
+          </div>
+
+          <!--  ===== 상품 리스트 영역 시작 ===== -->
+
+          <!-- 정렬/뷰 옵션 -->
+          <div class="list-toolbar">
+            <div class="toolbar-left">
+              <span class="product-count">총 <strong module="product_listnormal"><!--@count-->{$total_count}</strong>개의 상품</span>
+            </div>
+            <div class="toolbar-right">
+              <div class="sort-select" module="product_orderby">
+                <!--@css(/css/module/product/orderby.css)-->
+                <select name="orderby" onchange="location.href=this.value">
+                  <option value="{$order_link}" {$order_selected}>정렬기준</option>
+                </select>
+              </div>
+              <div class="view-toggle">
+                <button type="button" class="view-btn grid active" data-view="grid">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/></svg>
+                </button>
+                <button type="button" class="view-btn list" data-view="list">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 4h18v4H3zM3 10h18v4H3zM3 16h18v4H3z"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 상품 리스트 (그리드) -->
+          <div class="product-grid" id="productGrid">
+            <ul class="product-list grid" module="product_listnormal">
+              <!--@css(/css/module/product/listnormal.css)-->
+              <!--@js(/js/module/product/listnormal.js)-->
+              <!-- $count = 20 -->
+              <li class="product-item" id="anchorBoxId_{$product_no}">
+                <div class="product-thumb">
+                  <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}">
+                    <img src="{$image_medium}" alt="{$seo_alt_tag}" class="thumb-img">
+                    <img src="{$image_medium_2}" alt="{$seo_alt_tag}" class="thumb-img hover" onerror="this.style.display='none'">
+                  </a>
+                  <div class="product-icons">
+                    {$soldout_icon}{$new_icon}{$recommend_icon}{$benefit_icon}
+                  </div>
+                  <div class="product-actions">
+                    <button type="button" class="btn-wish" onclick="{$action_wishlist}" title="관심상품">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                      </svg>
+                    </button>
+                    <button type="button" class="btn-cart" onclick="{$action_basket}" title="장바구니">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                      </svg>
+                    </button>
+                    <button type="button" class="btn-quick" onclick="CAFE24.FRONT_PRODUCT.quickView('{$product_no}')" title="빠른보기">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <p class="product-brand {$brand_display|display}">{$brand}</p>
+                  <p class="product-name">
+                    <a href="/product/detail.html{$param}">{$product_name}</a>
+                  </p>
+                  <div class="product-price">
+                    <span class="price-sale">{$product_sale_price}</span>
+                    <span class="price-origin {$product_price_display|display}"><del>{$product_price}</del></span>
+                    <span class="discount-rate {$discount_rate_display|display}">{$discount_rate}%</span>
+                  </div>
+                  <p class="product-summary {$summary_display|display}">{$summary}</p>
+                  <div class="product-colors" module="product_Optioncolorchip">
+                    <span class="color-chip" style="background-color:{$color};" title="{$color_name}"></span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 상품 없음 표시 -->
+          <div class="no-product" module="product_empty">
+            <p>등록된 상품이 없습니다.</p>
+          </div>
+
+          <!-- 페이지네이션 -->
+          <div class="pagination" module="product_ListPaging">
+            <!--@css(/css/module/product/listPaging.css)-->
+            <a href="{$first_page}" class="page-btn first" title="처음">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="11 17 6 12 11 7"/><polyline points="18 17 13 12 18 7"/></svg>
+            </a>
+            <a href="{$prev_page}" class="page-btn prev" title="이전">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </a>
+            <ol class="page-numbers">
+              <li><a href="{$page_link}" class="{$page_selected}">{$page}</a></li>
+            </ol>
+            <a href="{$next_page}" class="page-btn next" title="다음">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+            <a href="{$last_page}" class="page-btn last" title="마지막">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
+            </a>
+          </div>
+
+          <!--  ===== 상품 리스트 영역 끝 ===== -->
+
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" module="Layout_footer">
+    <!--@css(/css/module/layout/footer.css)-->
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col brand">
+            <h2 class="footer-logo">MAISON</h2>
+            <p class="footer-slogan">Timeless Style, Modern Elegance</p>
+            <div class="footer-social">
+              <a href="https://instagram.com" target="_blank" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg></a>
+              <a href="https://facebook.com" target="_blank" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+              <a href="https://youtube.com" target="_blank" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/></svg></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3 class="footer-title">SHOP</h3>
+            <ul class="footer-links">
+              <li><a href="/product/list.html?cate_no=10">OUTER</a></li>
+              <li><a href="/product/list.html?cate_no=11">TOP</a></li>
+              <li><a href="/product/list.html?cate_no=12">BOTTOM</a></li>
+              <li><a href="/product/list.html?cate_no=13">ACCESSORY</a></li>
+              <li><a href="/product/list.html?cate_no=99">SALE</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3 class="footer-title">HELP</h3>
+            <ul class="footer-links">
+              <li><a href="/board/free/list.html?board_no=4">FAQ</a></li>
+              <li><a href="/order/list.html">주문조회</a></li>
+              <li><a href="/board/free/list.html?board_no=1">공지사항</a></li>
+              <li><a href="/board/free/write.html?board_no=5">1:1 문의</a></li>
+              <li><a href="/shopinfo/guide.html">이용안내</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3 class="footer-title">COMPANY</h3>
+            <ul class="footer-links">
+              <li><a href="/shopinfo/company.html">ABOUT US</a></li>
+              <li><a href="/shopinfo/map.html">STORE INFO</a></li>
+              <li><a href="/shopinfo/privacy.html">개인정보처리방침</a></li>
+              <li><a href="/shopinfo/agreement.html">이용약관</a></li>
+            </ul>
+          </div>
+          <div class="footer-col cs">
+            <h3 class="footer-title">CUSTOMER CENTER</h3>
+            <p class="cs-phone">{$shop_cs_phone}</p>
+            <p class="cs-time">{$shop_cs_time}</p>
+            <p class="cs-info">점심시간 12:30 - 13:30<br>토/일/공휴일 휴무</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="company-info">
+          <p>
+            <span>{$shop_name}</span>
+            <span>대표: {$shop_president}</span>
+            <span>사업자등록번호: {$shop_business_num}</span>
+            <span>통신판매업신고: {$shop_sales_num}</span>
+          </p>
+          <p>
+            <span>주소: {$shop_address}</span>
+            <span>이메일: {$shop_email}</span>
+          </p>
+        </div>
+        <p class="copyright">© 2024 MAISON. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Search Toggle
+    document.querySelector('.btn-search')?.addEventListener('click', function() {
+      document.querySelector('.search-layer').classList.toggle('active');
+    });
+
+    // Mobile Menu Toggle
+    document.querySelector('.btn-menu')?.addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.querySelector('.gnb').classList.toggle('active');
+    });
+
+    // Header Scroll Effect
+    window.addEventListener('scroll', function() {
+      document.querySelector('.header').classList.toggle('scrolled', window.scrollY > 100);
+    });
+
+    // View Toggle (Grid/List)
+    document.querySelectorAll('.view-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const view = this.dataset.view;
+        document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        const productGrid = document.getElementById('productGrid');
+        if (view === 'list') {
+          productGrid.classList.add('list-view');
+          productGrid.classList.remove('grid-view');
+        } else {
+          productGrid.classList.add('grid-view');
+          productGrid.classList.remove('list-view');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
