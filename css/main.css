@@ -689,7 +689,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
 }
 
-.product-actions button {
+.product-actions a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -701,7 +701,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease;
 }
 
-.product-actions button:hover {
+.product-actions a:hover {
   background: #1a1a1a;
   color: #fff;
 }
