@@ -202,38 +202,20 @@
         <!-- $count = 8 -->
         <ul class="swiper-wrapper product-list">
           <li class="swiper-slide product-item" id="anchorBoxId_{$product_no}">
-            <div class="product-box">
+            <a href="/product/detail.html{$param}" class="product-link" name="anchorBoxName_{$product_no}">
               <div class="product-thumb">
-                <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}">
-                  <img src="{$image_medium}" alt="{$seo_alt_tag}" class="thumb-img">
-                </a>
-                <div class="product-icons">
-                  {$soldout_icon}{$new_icon}{$recommend_icon}
-                </div>
-                <div class="product-actions">
-                  <a href="#none" class="btn-wish" title="관심상품">{$action_wishlist}
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                    </svg>
-                  </a>
-                  <a href="#none" class="btn-cart" title="장바구니">{$action_basket}
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                    </svg>
-                  </a>
-                </div>
+                <img src="{$image_medium}" alt="{$seo_alt_tag}" class="thumb-img">
+                <span class="product-icons">{$soldout_icon}{$new_icon}{$recommend_icon}</span>
               </div>
               <div class="product-info">
-                <p class="product-name">
-                  <a href="/product/detail.html{$param}">{$product_name}</a>
-                </p>
+                <p class="product-name">{$product_name}</p>
                 <div class="product-price">
                   <span class="price-sale">{$product_sale_price}</span>
                   <span class="price-origin {$product_price_display|display}"><del>{$product_price}</del></span>
                   <span class="discount-rate {$discount_rate_display|display}">{$discount_rate}%</span>
                 </div>
               </div>
-            </div>
+            </a>
           </li>
         </ul>
         <div class="swiper-button-prev"></div>
@@ -288,38 +270,20 @@
         <!-- $count = 8 -->
         <ul class="product-list grid">
           <li class="product-item" id="anchorBoxId_{$product_no}">
-            <div class="product-box">
+            <a href="/product/detail.html{$param}" class="product-link" name="anchorBoxName_{$product_no}">
               <div class="product-thumb">
                 <span class="rank-badge">BEST</span>
-                <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}">
-                  <img src="{$image_medium}" alt="{$seo_alt_tag}" class="thumb-img">
-                </a>
-                <div class="product-icons">
-                  {$soldout_icon}
-                </div>
-                <div class="product-actions">
-                  <a href="#none" class="btn-wish" title="관심상품">{$action_wishlist}
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                    </svg>
-                  </a>
-                  <a href="#none" class="btn-cart" title="장바구니">{$action_basket}
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                    </svg>
-                  </a>
-                </div>
+                <img src="{$image_medium}" alt="{$seo_alt_tag}" class="thumb-img">
+                <span class="product-icons">{$soldout_icon}</span>
               </div>
               <div class="product-info">
-                <p class="product-name">
-                  <a href="/product/detail.html{$param}">{$product_name}</a>
-                </p>
+                <p class="product-name">{$product_name}</p>
                 <div class="product-price">
                   <span class="price-sale">{$product_sale_price}</span>
                   <span class="price-origin {$product_price_display|display}"><del>{$product_price}</del></span>
                 </div>
               </div>
-            </div>
+            </a>
           </li>
         </ul>
       </div>
@@ -384,26 +348,20 @@
         <!-- $count = 4 -->
         <ul class="product-list mds">
           <li class="product-item large" id="anchorBoxId_{$product_no}">
-            <div class="product-box">
+            <a href="/product/detail.html{$param}" class="product-link">
               <div class="product-thumb">
-                <a href="/product/detail.html{$param}">
-                  <img src="{$image_big}" alt="{$seo_alt_tag}" class="thumb-img">
-                </a>
-                <div class="product-icons">
-                  {$soldout_icon}{$recommend_icon}
-                </div>
+                <img src="{$image_big}" alt="{$seo_alt_tag}" class="thumb-img">
+                <span class="product-icons">{$soldout_icon}{$recommend_icon}</span>
               </div>
               <div class="product-info">
                 <span class="md-comment">"이번 시즌 추천 아이템"</span>
-                <p class="product-name">
-                  <a href="/product/detail.html{$param}">{$product_name}</a>
-                </p>
+                <p class="product-name">{$product_name}</p>
                 <div class="product-price">
                   <span class="price-sale">{$product_sale_price}</span>
                 </div>
-                <a href="/product/detail.html{$param}" class="btn-detail">VIEW DETAIL</a>
+                <span class="btn-detail">VIEW DETAIL</span>
               </div>
-            </div>
+            </a>
           </li>
         </ul>
       </div>

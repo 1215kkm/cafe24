@@ -607,8 +607,14 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
-.product-box {
+.product-link {
+  display: block;
   height: 100%;
+  color: inherit;
+}
+
+.product-link:hover {
+  color: inherit;
 }
 
 .product-thumb {
