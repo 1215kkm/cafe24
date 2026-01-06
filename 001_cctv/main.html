@@ -193,25 +193,32 @@
         <p>가장 많은 고객님들이 선택한 베스트셀러 제품을 만나보세요</p>
       </div>
 
-      <div module="product_listmain_1">
-        <!-- $count = 8 -->
-        <ul class="prdList grid4">
-          <li class="item" id="anchorBoxId_{$product_no}">
-            <div class="box">
-              <div class="thumb">
-                <a href="/product/detail.html{$param}">
-                  <img src="{$image_medium}" alt="{$seo_alt_tag}" />
+      <div module="product_listmain_1" class="ec-base-product">
+        <!--
+          $count = 8
+          $basket_result = /product/add_basket.html
+          $basket_option = /product/basket_option.html
+        -->
+        <ul class="prdList column4">
+          <li id="anchorBoxId_{$product_no}">
+            <div class="thumbnail">
+              <div class="prdImg">
+                <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}">
+                  <img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" />
+                  <span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span>
                 </a>
-                <div class="status">
-                  <div class="icon">{$soldout_icon}{$recommend_icon}{$new_icon}{$product_icons}</div>
-                  <div class="button">{$basket_icon}{$zoom_icon}</div>
-                </div>
+                <span class="wish">{$list_wish_icon}</span>
               </div>
-              <p class="name"><a href="/product/detail.html{$param}">{$product_name}</a></p>
-              <div class="price">
-                <span class="sale">{$disp_product_price}</span>
-                <span class="origin {$product_price_ref_display|display}">{$txt_product_price_ref}</span>
+              <div class="icon">
+                <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons}</div>
+                <div class="button">{$basket_icon} {$zoom_icon}</div>
               </div>
+            </div>
+            <div class="description">
+              <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}">{$product_name}</a></strong>
+              <ul module="product_ListItem" class="spec">
+                <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+              </ul>
             </div>
           </li>
         </ul>
@@ -232,23 +239,32 @@
         <p>새롭게 출시된 최신 CCTV 제품을 확인해보세요</p>
       </div>
 
-      <div module="product_listmain_2">
-        <!-- $count = 4 -->
-        <ul class="prdList grid4">
-          <li class="item" id="anchorBoxId_{$product_no}">
-            <div class="box">
-              <div class="thumb">
-                <a href="/product/detail.html{$param}">
-                  <img src="{$image_medium}" alt="{$seo_alt_tag}" />
+      <div module="product_listmain_2" class="ec-base-product">
+        <!--
+          $count = 4
+          $basket_result = /product/add_basket.html
+          $basket_option = /product/basket_option.html
+        -->
+        <ul class="prdList column4">
+          <li id="anchorBoxId_{$product_no}">
+            <div class="thumbnail">
+              <div class="prdImg">
+                <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}">
+                  <img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" />
+                  <span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span>
                 </a>
-                <div class="status">
-                  <div class="icon">{$soldout_icon}{$new_icon}</div>
-                </div>
+                <span class="wish">{$list_wish_icon}</span>
               </div>
-              <p class="name"><a href="/product/detail.html{$param}">{$product_name}</a></p>
-              <div class="price">
-                <span class="sale">{$disp_product_price}</span>
+              <div class="icon">
+                <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons}</div>
+                <div class="button">{$basket_icon} {$zoom_icon}</div>
               </div>
+            </div>
+            <div class="description">
+              <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}">{$product_name}</a></strong>
+              <ul module="product_ListItem" class="spec">
+                <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+              </ul>
             </div>
           </li>
         </ul>
