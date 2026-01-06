@@ -379,30 +379,7 @@
     </div>
   </footer>
 
-  <script>
-    window.addEventListener('scroll', function() {
-      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
-    });
-    document.querySelector('.mobile-toggle').addEventListener('click', function() {
-      document.getElementById('gnb').classList.toggle('active');
-    });
-
-    // 수량 조절
-    function changeQty(delta) {
-      const qty = document.getElementById('quantity');
-      const newVal = parseInt(qty.value) + delta;
-      if (newVal >= 1) qty.value = newVal;
-    }
-
-    // 탭 기능
-    document.querySelectorAll('.tab-nav button').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        document.querySelectorAll('.tab-nav button').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
-        document.getElementById('tab-' + this.dataset.tab).style.display = 'block';
-      });
-    });
-  </script>
+  <script src="./js/common.js"></script>
+  <script src="./js/detail.js"></script>
 </body>
 </html>

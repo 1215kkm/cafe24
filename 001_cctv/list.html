@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="YOURLOGO - CCTV 제조 및 판매 전문업체">
-  <title>YOURLOGO - CCTV 전문 제조 판매업체</title>
+  <meta name="description" content="YOURLOGO CCTV 제품 목록">
+  <title>CCTV 카메라 - YOURLOGO</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,16 +71,14 @@
     </div>
   </header>
 
-  <!-- PAGE HEADER (서브페이지마다 수정) -->
-  <div class="page-header">
+  <!-- PAGE HEADER -->
+  <div class="page-header" module="Layout_path">
     <div class="container">
-      <h1><!-- 페이지 제목 --></h1>
+      <h1>{$category_title}</h1>
       <div class="breadcrumb">
         <a href="/index.html">HOME</a>
         <span>&gt;</span>
-        <a href="#"><!-- 대분류 --></a>
-        <span>&gt;</span>
-        <span><!-- 현재 페이지 --></span>
+        <span>{$category_title}</span>
       </div>
     </div>
   </div>
@@ -91,9 +89,9 @@
       <div class="content-wrapper">
 
         <!-- SIDE NAVIGATION -->
-        <aside class="side-nav">
-          <h3><!-- 카테고리명 --></h3>
-          <ul module="Layout_category">
+        <aside class="side-nav" module="Layout_category">
+          <h3>제품</h3>
+          <ul>
             <li class="{$display_group}">
               <a href="{$link_category}">{$name}</a>
             </li>
@@ -102,10 +100,57 @@
 
         <!-- MAIN CONTENT -->
         <div class="main-content">
-          <!-- 각 페이지 콘텐츠 삽입 영역 -->
-          <!-- Content Module Here -->
-        </div>
 
+          <!-- 상품 목록 헤더 -->
+          <div class="product-list-header" module="product_list">
+            <p class="product-count">총 <strong>{$total_count}</strong>개의 상품이 있습니다.</p>
+            <div class="product-sort">
+              <select onchange="location.href=this.value;">
+                <option value="{$sort_link_date}" {$sort_date}>신상품순</option>
+                <option value="{$sort_link_popular}" {$sort_popular}>인기순</option>
+                <option value="{$sort_link_lowprice}" {$sort_lowprice}>낮은가격순</option>
+                <option value="{$sort_link_highprice}" {$sort_highprice}>높은가격순</option>
+                <option value="{$sort_link_name}" {$sort_name}>상품명순</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 카페24 상품 목록 모듈 -->
+          <div module="product_list">
+            <!-- $count = 12 -->
+            <ul class="prdList column4">
+              <li class="item" id="anchorBoxId_{$product_no}">
+                <div class="box">
+                  <div class="thumb">
+                    <a href="/product/detail.html{$param}">
+                      <img src="{$image_medium}" alt="{$seo_alt_tag}" />
+                    </a>
+                    <div class="status">
+                      <div class="icon">{$soldout_icon}{$recommend_icon}{$new_icon}{$product_icons}</div>
+                    </div>
+                  </div>
+                  <p class="name"><a href="/product/detail.html{$param}">{$product_name}</a></p>
+                  <div class="price">
+                    <span class="sale">{$disp_product_price}</span>
+                    <span class="origin {$product_price_ref_display|display}">{$txt_product_price_ref}</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 카페24 페이지네이션 모듈 -->
+          <div class="pagination" module="paging_module">
+            <a href="{$first_page}" class="first"><i class="fas fa-angle-double-left"></i></a>
+            <a href="{$prev_page}" class="prev"><i class="fas fa-angle-left"></i></a>
+            <span class="{$page_group}">
+              <a href="{$page_link}" class="{$page_current}">{$page_no}</a>
+            </span>
+            <a href="{$next_page}" class="next"><i class="fas fa-angle-right"></i></a>
+            <a href="{$last_page}" class="last"><i class="fas fa-angle-double-right"></i></a>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
