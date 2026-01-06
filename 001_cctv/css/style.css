@@ -330,14 +330,16 @@ p, span, li, td, th, label {
 ======================================== */
 #juno_wrap .main-visual {
   position: relative;
-  height: 100vh;
-  min-height: 700px;
+  width: 100%;
+  height: calc(100vh - 90px);
+  min-height: 600px;
   margin-top: 90px;
   overflow: hidden;
 }
 
 #juno_wrap .main-visual .slide-item {
   position: relative;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -347,10 +349,11 @@ p, span, li, td, th, label {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 #juno_wrap .main-visual .slide-bg::after {
@@ -1543,6 +1546,7 @@ body.sub-page #juno_wrap {
 
   #juno_wrap .main-visual {
     margin-top: 70px;
+    height: calc(100vh - 70px);
     min-height: 500px;
   }
 
