@@ -1186,6 +1186,17 @@ body.sub-page #juno_wrap {
   padding-top: 90px;
 }
 
+/* Sub page main container */
+#juno_wrap main.sub-page {
+  padding-top: 90px;
+  min-height: calc(100vh - 400px);
+}
+
+#juno_wrap main.sub-page > .container {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
 /* Page Header */
 #juno_wrap .page-header {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
