@@ -1965,3 +1965,1044 @@ body.sub-page #juno_wrap {
     transform: none;
   }
 }
+
+/* ========================================
+   CAFE24 DEFAULT TEMPLATE STYLES
+   카페24 기본 템플릿 스타일
+======================================== */
+
+/* Path / Breadcrumb */
+.path {
+  padding: 20px 0;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.path span:first-child {
+  display: none;
+}
+
+.path ol {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.path ol li {
+  font-size: 14px;
+  color: var(--gray-500);
+}
+
+.path ol li::after {
+  content: '>';
+  margin-left: 10px;
+  color: var(--gray-400);
+}
+
+.path ol li:last-child::after {
+  display: none;
+}
+
+.path ol li a {
+  color: var(--gray-600);
+  transition: var(--transition);
+}
+
+.path ol li a:hover {
+  color: var(--secondary-color);
+}
+
+.path ol li:last-child a,
+.path ol li strong a {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+/* ========================================
+   CAFE24 PRODUCT DETAIL STYLES
+======================================== */
+
+/* Heading Area */
+.headingArea {
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  border-bottom: 2px solid var(--gray-900);
+}
+
+.headingArea h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.headingArea .delivery {
+  font-size: 14px;
+  color: var(--accent-color);
+  margin-right: 15px;
+}
+
+.headingArea .icon {
+  display: inline-flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.headingArea .icon img {
+  height: 20px;
+  vertical-align: middle;
+}
+
+/* Detail Area Layout */
+.detailArea {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+/* Image Area */
+.imgArea {
+  flex: 0 0 500px;
+  max-width: 500px;
+}
+
+.imgArea .keyImg {
+  margin-bottom: 15px;
+}
+
+.imgArea .keyImg .thumbnail {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--gray-100);
+}
+
+.imgArea .keyImg .thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.imgArea .keyImg .thumbnail .wish {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.imgArea .listImg ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.imgArea .listImg ul li {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.imgArea .listImg ul li:hover,
+.imgArea .listImg ul li.active {
+  border-color: var(--secondary-color);
+}
+
+.imgArea .listImg ul li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imgArea .control {
+  margin-top: 15px;
+}
+
+.imgArea .control .btnZoom {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 20px;
+  background: var(--gray-100);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--gray-600);
+  transition: var(--transition);
+}
+
+.imgArea .control .btnZoom:hover {
+  background: var(--gray-200);
+}
+
+.imgArea .ec-base-button {
+  margin-top: 20px;
+}
+
+.imgArea .ec-base-button a {
+  display: inline-block;
+  padding: 10px 15px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  background: var(--gray-100);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--gray-700);
+  transition: var(--transition);
+}
+
+.imgArea .ec-base-button a:hover {
+  background: var(--secondary-color);
+  color: var(--white);
+}
+
+.imgArea .likeButton button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--gray-600);
+  margin-top: 15px;
+  transition: var(--transition);
+}
+
+.imgArea .likeButton button:hover {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+/* Info Area */
+.infoArea {
+  flex: 1;
+  min-width: 0;
+}
+
+.infoArea table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.infoArea table caption {
+  display: none;
+}
+
+.infoArea table th,
+.infoArea table td {
+  padding: 15px 10px;
+  font-size: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.infoArea table th {
+  width: 120px;
+  color: var(--gray-600);
+  font-weight: 500;
+  background: var(--gray-50);
+}
+
+.infoArea table td {
+  color: var(--gray-800);
+}
+
+/* Quantity Control */
+.ec-base-qty {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.ec-base-qty input {
+  width: 60px;
+  height: 40px;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ec-base-qty a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 40px;
+  background: var(--gray-100);
+  transition: var(--transition);
+}
+
+.ec-base-qty a:hover {
+  background: var(--gray-200);
+}
+
+.ec-base-qty a img {
+  width: 10px;
+  height: auto;
+}
+
+/* Total Price */
+.totalPrice {
+  background: var(--gray-100);
+  padding: 25px 30px;
+  border-radius: 12px;
+  margin: 25px 0;
+  text-align: right;
+}
+
+.totalPrice strong {
+  font-size: 16px;
+  color: var(--gray-700);
+  margin-right: 15px;
+}
+
+.totalPrice span strong {
+  font-size: 32px;
+  color: var(--secondary-color);
+  margin-right: 0;
+}
+
+.totalPrice span strong em {
+  font-style: normal;
+}
+
+/* Product Action Buttons */
+.infoArea .ec-base-button.gColumn {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.infoArea .ec-base-button.gColumn a,
+.infoArea .ec-base-button.gColumn span {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 20px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.infoArea .ec-base-button.gColumn .btnSubmit {
+  background: var(--secondary-color);
+  color: var(--white);
+}
+
+.infoArea .ec-base-button.gColumn .btnSubmit:hover {
+  background: #e08419;
+}
+
+.infoArea .ec-base-button.gColumn .btnNormal {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.infoArea .ec-base-button.gColumn .btnNormal:hover {
+  background: #153048;
+}
+
+.infoArea .ec-base-button.gColumn .btnEm {
+  background: var(--gray-400);
+  color: var(--white);
+  cursor: not-allowed;
+}
+
+/* Product Set / Additional Products */
+.productSet {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.productSet .title h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 15px;
+}
+
+.productSet .title h3 span {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gray-500);
+  margin-left: 10px;
+}
+
+.productSet .product {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.productSet .product > li {
+  padding: 20px;
+  background: var(--gray-50);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.productSet .product .information {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.productSet .product .information .thumbnail {
+  flex: 0 0 80px;
+}
+
+.productSet .product .information .thumbnail img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.productSet .product .information .name {
+  font-size: 15px;
+  color: var(--gray-800);
+  margin-bottom: 5px;
+}
+
+.productSet .product .information .price {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.productSet .product .information .salePrice {
+  font-size: 14px;
+  color: var(--secondary-color);
+}
+
+/* ========================================
+   CAFE24 TAB STYLES
+======================================== */
+.ec-base-tab {
+  margin-top: 60px;
+}
+
+.ec-base-tab .menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid var(--gray-200);
+}
+
+.ec-base-tab .menu li {
+  flex: 1;
+}
+
+.ec-base-tab .menu li a {
+  display: block;
+  padding: 20px 15px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray-500);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: var(--transition);
+}
+
+.ec-base-tab .menu li a:hover,
+.ec-base-tab .menu li.selected a {
+  color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+}
+
+.ec-base-tab .cont {
+  padding: 40px 0;
+}
+
+.ec-base-tab .cont h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.ec-base-tab .board {
+  padding: 40px 0;
+}
+
+.ec-base-tab .board h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 10px;
+}
+
+.ec-base-tab .board .desc {
+  font-size: 14px;
+  color: var(--gray-500);
+  margin-bottom: 25px;
+}
+
+/* Related Products */
+.ec-base-tab .relation {
+  padding: 40px 0;
+}
+
+.ec-base-tab .relation h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 25px;
+}
+
+.ec-base-tab .relation .prdList {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  margin: 0 -10px !important;
+}
+
+.ec-base-tab .relation .prdList > li {
+  width: 25% !important;
+  padding: 10px !important;
+}
+
+/* ========================================
+   CAFE24 PRODUCT LIST PAGE STYLES
+======================================== */
+
+/* Category Menu Package */
+[module="Product_menupackage"] {
+  margin-bottom: 40px;
+}
+
+[module="Product_menupackage"] .title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+[module="Product_menupackage"] .title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+[module="Product_menupackage"] .title h2 span {
+  display: block;
+}
+
+[module="Product_menupackage"] .banner img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* Menu Category */
+.menuCategory {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+  background: var(--gray-100);
+  border-radius: 12px;
+}
+
+.menuCategory > li > a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--white);
+  border-radius: 25px;
+  font-size: 15px;
+  color: var(--gray-700);
+  transition: var(--transition);
+}
+
+.menuCategory > li > a:hover,
+.menuCategory > li.selected > a {
+  background: var(--secondary-color);
+  color: var(--white);
+}
+
+.menuCategory > li > a .count {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+
+.menuCategory > li.selected > a .count {
+  color: rgba(255,255,255,0.8);
+}
+
+/* Product Title Section */
+.ec-base-product .title {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.ec-base-product .title h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.ec-base-product .title h3 span {
+  display: inline-block;
+}
+
+/* Function Area (Sort/Filter) */
+.function {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 25px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.function .prdCount {
+  font-size: 15px;
+  color: var(--gray-600);
+}
+
+.function .prdCount strong {
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+.function #type {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.function #type li a {
+  font-size: 14px;
+  color: var(--gray-500);
+  transition: var(--transition);
+}
+
+.function #type li a:hover,
+.function #type li a[style*="font-weight:bold"],
+.function #type li a[style*="font-weight: bold"] {
+  color: var(--secondary-color);
+  font-weight: 600 !important;
+}
+
+.function .compare a {
+  padding: 8px 15px;
+  background: var(--gray-100);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--gray-600);
+  transition: var(--transition);
+}
+
+.function .compare a:hover {
+  background: var(--secondary-color);
+  color: var(--white);
+}
+
+/* Condition Search */
+.condition {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 15px 0;
+  border: none;
+}
+
+.condition legend {
+  display: none;
+}
+
+.condition select {
+  padding: 10px 15px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--gray-700);
+}
+
+.condition .btnSubmitFix {
+  padding: 10px 20px;
+  background: var(--primary-color);
+  color: var(--white);
+  border-radius: 6px;
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.condition .btnSubmitFix:hover {
+  background: #153048;
+}
+
+/* ========================================
+   CAFE24 PAGINATION STYLES
+======================================== */
+.ec-base-paginate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 50px;
+  padding: 30px 0;
+}
+
+.ec-base-paginate a,
+.ec-base-paginate ol li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--gray-600);
+  transition: var(--transition);
+}
+
+.ec-base-paginate a:hover,
+.ec-base-paginate ol li a:hover {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.ec-base-paginate ol {
+  display: flex;
+  gap: 5px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ec-base-paginate ol li a.selected,
+.ec-base-paginate ol li a[style*="font-weight:bold"],
+.ec-base-paginate ol li a[style*="font-weight: bold"] {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var(--white);
+  font-weight: 700 !important;
+}
+
+.ec-base-paginate a.first,
+.ec-base-paginate a.last {
+  background: var(--gray-100);
+}
+
+.ec-base-paginate a img {
+  width: 8px;
+  height: auto;
+}
+
+/* ========================================
+   CAFE24 TABLE STYLES
+======================================== */
+.ec-base-table {
+  margin-bottom: 30px;
+}
+
+.ec-base-table table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 2px solid var(--gray-900);
+}
+
+.ec-base-table table caption {
+  display: none;
+}
+
+.ec-base-table table th,
+.ec-base-table table td {
+  padding: 15px 10px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.ec-base-table table thead th {
+  background: var(--gray-100);
+  font-weight: 600;
+  color: var(--gray-700);
+  text-align: center;
+}
+
+.ec-base-table table tbody td {
+  color: var(--gray-600);
+}
+
+.ec-base-table table tbody td.subject {
+  text-align: left;
+}
+
+.ec-base-table table tbody td.subject a {
+  color: var(--gray-800);
+  transition: var(--transition);
+}
+
+.ec-base-table table tbody td.subject a:hover {
+  color: var(--secondary-color);
+}
+
+.ec-base-table table tbody .center td {
+  text-align: center;
+}
+
+/* ========================================
+   CAFE24 BUTTON STYLES
+======================================== */
+.ec-base-button {
+  margin: 20px 0;
+}
+
+.ec-base-button.typeBorder {
+  padding-top: 20px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.ec-base-button .gRight {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.ec-base-button .btnNormal {
+  display: inline-block;
+  padding: 12px 25px;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--gray-700);
+  transition: var(--transition);
+}
+
+.ec-base-button .btnNormal:hover {
+  background: var(--gray-200);
+}
+
+.ec-base-button .btnSubmit {
+  display: inline-block;
+  padding: 12px 25px;
+  background: var(--secondary-color);
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--white);
+  transition: var(--transition);
+}
+
+.ec-base-button .btnSubmit:hover {
+  background: #e08419;
+}
+
+/* ========================================
+   CAFE24 HELPER CLASSES
+======================================== */
+.displaynone,
+[class*="display|display"]:empty {
+  display: none !important;
+}
+
+.txtWarn {
+  color: #e74c3c;
+}
+
+.txtInfo {
+  color: var(--gray-500);
+}
+
+.txt11 {
+  font-size: 11px !important;
+}
+
+.ec-base-help {
+  font-size: 13px;
+  color: var(--gray-500);
+  margin: 10px 0;
+}
+
+/* Member Benefit Box */
+.ec-base-box.typeMember {
+  margin-top: 20px;
+  padding: 20px;
+  background: var(--gray-50);
+  border-radius: 10px;
+}
+
+.ec-base-box.typeMember .message {
+  font-size: 14px;
+  color: var(--gray-600);
+  margin-bottom: 15px;
+}
+
+.ec-base-box.typeMember .information {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.ec-base-box.typeMember .thumbnail img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ec-base-box.typeMember .description .member {
+  font-size: 14px;
+  color: var(--gray-700);
+}
+
+.ec-base-box.typeMember .description .member strong {
+  color: var(--primary-color);
+}
+
+.ec-base-box.typeMember .description .member em {
+  color: var(--secondary-color);
+  font-style: normal;
+}
+
+/* Supply Info */
+.supplyInfo {
+  margin-top: 30px;
+  padding: 20px;
+  background: var(--gray-50);
+  border-radius: 10px;
+}
+
+/* Event Area */
+.eventArea {
+  margin-top: 30px;
+  padding: 25px;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #ffb84d 100%);
+  border-radius: 12px;
+}
+
+.eventArea h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 15px;
+}
+
+.eventArea .event {
+  color: var(--white);
+}
+
+/* Delivery Info */
+.cont .delivery {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cont .delivery li {
+  padding: 12px 0;
+  font-size: 15px;
+  color: var(--gray-600);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.cont .delivery li:last-child {
+  border-bottom: none;
+}
+
+/* ========================================
+   RESPONSIVE FOR CAFE24 TEMPLATES
+======================================== */
+@media (max-width: 991px) {
+  .detailArea {
+    flex-direction: column;
+  }
+
+  .imgArea {
+    flex: none;
+    max-width: 100%;
+  }
+
+  .ec-base-tab .relation .prdList > li {
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .headingArea h2 {
+    font-size: 22px;
+  }
+
+  .infoArea .ec-base-button.gColumn {
+    flex-wrap: wrap;
+  }
+
+  .infoArea .ec-base-button.gColumn a,
+  .infoArea .ec-base-button.gColumn span {
+    flex: 1 1 calc(50% - 5px);
+  }
+
+  .ec-base-tab .menu {
+    flex-wrap: wrap;
+  }
+
+  .ec-base-tab .menu li {
+    flex: 1 1 50%;
+  }
+
+  .ec-base-tab .menu li a {
+    font-size: 14px;
+    padding: 15px 10px;
+  }
+
+  .function {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .menuCategory {
+    padding: 15px;
+  }
+
+  .menuCategory > li > a {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ec-base-tab .relation .prdList > li {
+    width: 100% !important;
+  }
+
+  .totalPrice span strong {
+    font-size: 24px;
+  }
+
+  .infoArea .ec-base-button.gColumn a,
+  .infoArea .ec-base-button.gColumn span {
+    flex: 1 1 100%;
+    padding: 15px;
+    font-size: 16px;
+  }
+}
