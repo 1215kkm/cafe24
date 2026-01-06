@@ -716,34 +716,43 @@ p, span, li, td, th, label {
 /* Product List Items (Cafe24 Module) - 가로 정렬 */
 #juno_wrap .prdList,
 #juno_wrap .ec-base-product .prdList {
-  display: grid !important;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-#juno_wrap .prdList.grid4,
-#juno_wrap .ec-base-product ul.prdList.grid4 {
-  grid-template-columns: repeat(4, 1fr) !important;
-}
-
-#juno_wrap .prdList.grid3,
-#juno_wrap .ec-base-product ul.prdList.grid3 {
-  grid-template-columns: repeat(3, 1fr) !important;
-}
-
-#juno_wrap .prdList.grid2,
-#juno_wrap .ec-base-product ul.prdList.grid2 {
-  grid-template-columns: repeat(2, 1fr) !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  margin: 0 -15px !important;
+  padding: 0 !important;
+  list-style: none !important;
+  font-size: 0 !important;
+  line-height: normal !important;
+  min-width: auto !important;
 }
 
 #juno_wrap .prdList > li,
+#juno_wrap .prdList > li.item,
 #juno_wrap .ec-base-product .prdList > li {
-  display: block !important;
-  width: auto !important;
+  display: inline-block !important;
+  vertical-align: top !important;
+  padding: 15px !important;
   margin: 0 !important;
-  padding: 0 !important;
+  font-size: 16px !important;
+  box-sizing: border-box !important;
+}
+
+/* Grid 4열 */
+#juno_wrap .prdList.grid4 > li,
+#juno_wrap .ec-base-product ul.prdList.grid4 > li {
+  width: 25% !important;
+}
+
+/* Grid 3열 */
+#juno_wrap .prdList.grid3 > li,
+#juno_wrap .ec-base-product ul.prdList.grid3 > li {
+  width: 33.333% !important;
+}
+
+/* Grid 2열 */
+#juno_wrap .prdList.grid2 > li,
+#juno_wrap .ec-base-product ul.prdList.grid2 > li {
+  width: 50% !important;
 }
 
 #juno_wrap .prdList .item {
@@ -1609,8 +1618,8 @@ body.sub-page #juno_wrap {
     --container-width: 1200px;
   }
 
-  #juno_wrap .prdList.grid4 {
-    grid-template-columns: repeat(3, 1fr);
+  #juno_wrap .prdList.grid4 > li {
+    width: 33.333% !important;
   }
 }
 
@@ -1665,8 +1674,8 @@ body.sub-page #juno_wrap {
     gap: 50px;
   }
 
-  #juno_wrap .prdList.grid4 {
-    grid-template-columns: repeat(2, 1fr);
+  #juno_wrap .prdList.grid4 > li {
+    width: 50% !important;
   }
 
   body.sub-page #juno_wrap {
@@ -1684,10 +1693,9 @@ body.sub-page #juno_wrap {
     flex: 0 0 calc(50% - 10px);
   }
 
-  #juno_wrap .prdList.grid4,
-  #juno_wrap .prdList.grid3 {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  #juno_wrap .prdList.grid4 > li,
+  #juno_wrap .prdList.grid3 > li {
+    width: 50% !important;
   }
 
   #juno_wrap .team-grid {
@@ -1744,10 +1752,10 @@ body.sub-page #juno_wrap {
     flex-direction: column;
   }
 
-  #juno_wrap .prdList.grid4,
-  #juno_wrap .prdList.grid3,
-  #juno_wrap .prdList.grid2 {
-    grid-template-columns: 1fr;
+  #juno_wrap .prdList.grid4 > li,
+  #juno_wrap .prdList.grid3 > li,
+  #juno_wrap .prdList.grid2 > li {
+    width: 100% !important;
   }
 
   #juno_wrap .product-actions {
