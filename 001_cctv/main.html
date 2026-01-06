@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
     <!--@css(/skin/img/custom/css/style.css)-->
 
     <!--@js(/layout/basic/js/basic.js)-->
@@ -64,7 +64,7 @@
         <div class="search-form" module="searchHeader">
           <form action="/product/search.html" method="get">
             <input type="text" name="keyword" placeholder="검색어를 입력하세요">
-            <button type="submit"><i class="fas fa-search"></i></button>
+            <button type="submit"><span class="material-symbols-outlined">search</span></button>
           </form>
         </div>
 
@@ -82,9 +82,9 @@
         </div>
 
         <div class="header-icons">
-          <a href="/myshop/wish_list.html" title="관심상품"><i class="fas fa-heart"></i></a>
+          <a href="/myshop/wish_list.html" title="관심상품"><span class="material-symbols-outlined">favorite</span></a>
           <a href="/order/basket.html" title="장바구니" module="Layout_shoppingInfo">
-            <i class="fas fa-shopping-cart"></i>
+            <span class="material-symbols-outlined">shopping_cart</span>
             <span class="cart-count">{$basket_count}</span>
           </a>
         </div>
@@ -97,7 +97,7 @@
   <!-- MAIN VISUAL -->
   <div class="main-visual">
     <div class="slide-item">
-      <div class="slide-bg" style="background-image: url('/web/upload/main_visual.jpg');"></div>
+      <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80');"></div>
       <div class="slide-content">
         <span class="sub-title">CCTV 전문 기업</span>
         <h2>안전한 내일을 위한<br>스마트 보안 솔루션</h2>
@@ -115,27 +115,27 @@
     <div class="container">
       <div class="icon-menu-inner">
         <a href="/product/list.html?cate_no=1" class="icon-menu-item">
-          <div class="icon"><i class="fas fa-video"></i></div>
+          <div class="icon"><span class="material-symbols-outlined">videocam</span></div>
           <h4>CCTV 카메라</h4>
           <p>고화질 보안카메라</p>
         </a>
         <a href="/product/list.html?cate_no=2" class="icon-menu-item">
-          <div class="icon"><i class="fas fa-hdd"></i></div>
+          <div class="icon"><span class="material-symbols-outlined">hard_drive</span></div>
           <h4>녹화장치</h4>
           <p>DVR/NVR 시스템</p>
         </a>
         <a href="/product/list.html?cate_no=3" class="icon-menu-item">
-          <div class="icon"><i class="fas fa-tools"></i></div>
+          <div class="icon"><span class="material-symbols-outlined">build</span></div>
           <h4>설치서비스</h4>
           <p>전문 설치 지원</p>
         </a>
         <a href="/board/support.html" class="icon-menu-item">
-          <div class="icon"><i class="fas fa-headset"></i></div>
+          <div class="icon"><span class="material-symbols-outlined">headset_mic</span></div>
           <h4>기술지원</h4>
           <p>A/S 및 고객지원</p>
         </a>
         <a href="/about/company.html" class="icon-menu-item">
-          <div class="icon"><i class="fas fa-building"></i></div>
+          <div class="icon"><span class="material-symbols-outlined">business</span></div>
           <h4>회사소개</h4>
           <p>YOURLOGO 소개</p>
         </a>
@@ -148,7 +148,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-image">
-          <img src="/web/upload/about_image.jpg" alt="YOURLOGO CCTV 전문기업">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="YOURLOGO CCTV 전문기업">
           <div class="accent-box"></div>
         </div>
         <div class="about-content">
@@ -160,19 +160,19 @@
           <p>YOURLOGO는 대한민국 대표 CCTV 제조 및 판매 기업으로서, 최첨단 기술력과 풍부한 경험을 바탕으로 고객님께 최상의 보안 솔루션을 제공합니다.</p>
           <div class="about-features">
             <div class="about-feature-item">
-              <div class="icon"><i class="fas fa-award"></i></div>
+              <div class="icon"><span class="material-symbols-outlined">workspace_premium</span></div>
               <div><h5>품질 인증</h5><p>ISO 9001 품질경영시스템</p></div>
             </div>
             <div class="about-feature-item">
-              <div class="icon"><i class="fas fa-truck"></i></div>
+              <div class="icon"><span class="material-symbols-outlined">local_shipping</span></div>
               <div><h5>전국 배송</h5><p>당일 발송 시스템</p></div>
             </div>
             <div class="about-feature-item">
-              <div class="icon"><i class="fas fa-shield-alt"></i></div>
+              <div class="icon"><span class="material-symbols-outlined">security</span></div>
               <div><h5>품질 보증</h5><p>3년 무상 A/S</p></div>
             </div>
             <div class="about-feature-item">
-              <div class="icon"><i class="fas fa-users"></i></div>
+              <div class="icon"><span class="material-symbols-outlined">groups</span></div>
               <div><h5>전문 상담</h5><p>1:1 맞춤 컨설팅</p></div>
             </div>
           </div>
@@ -328,25 +328,25 @@
       </div>
       <div class="team-grid">
         <div class="team-item">
-          <div class="photo"><img src="/web/upload/team_01.jpg" alt="김보안 대표"></div>
+          <div class="photo"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="김보안 대표"></div>
           <h4>김보안</h4>
           <span class="position">대표이사</span>
           <p>20년 경력의 보안 전문가<br>CCTV 시스템 컨설팅</p>
         </div>
         <div class="team-item">
-          <div class="photo"><img src="/web/upload/team_02.jpg" alt="이기술 팀장"></div>
+          <div class="photo"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="이기술 팀장"></div>
           <h4>이기술</h4>
           <span class="position">기술개발 팀장</span>
           <p>영상처리 기술 전문<br>AI 카메라 개발 담당</p>
         </div>
         <div class="team-item">
-          <div class="photo"><img src="/web/upload/team_03.jpg" alt="박설치 과장"></div>
+          <div class="photo"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="박설치 과장"></div>
           <h4>박설치</h4>
           <span class="position">설치팀 과장</span>
           <p>현장 시공 15년 경력<br>전국 설치 네트워크 관리</p>
         </div>
         <div class="team-item">
-          <div class="photo"><img src="/web/upload/team_04.jpg" alt="최상담 주임"></div>
+          <div class="photo"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80" alt="최상담 주임"></div>
           <h4>최상담</h4>
           <span class="position">고객지원 주임</span>
           <p>고객 만족 최우선<br>A/S 및 기술지원 담당</p>
@@ -364,17 +364,17 @@
         <a href="/board/contact.html" class="btn btn-primary">무료 상담 신청</a>
         <div class="contact-info">
           <div class="contact-item">
-            <div class="icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="icon"><span class="material-symbols-outlined">call</span></div>
             <h5>고객센터</h5>
             <p>1588-0000</p>
           </div>
           <div class="contact-item">
-            <div class="icon"><i class="fas fa-clock"></i></div>
+            <div class="icon"><span class="material-symbols-outlined">schedule</span></div>
             <h5>운영시간</h5>
             <p>평일 09:00 - 18:00</p>
           </div>
           <div class="contact-item">
-            <div class="icon"><i class="fas fa-envelope"></i></div>
+            <div class="icon"><span class="material-symbols-outlined">mail</span></div>
             <h5>이메일</h5>
             <p>info@yourlogo.co.kr</p>
           </div>
@@ -390,7 +390,7 @@
         <div class="board-box">
           <div class="board-title">
             <h3>공지사항</h3>
-            <a href="/board/notice.html">더보기 <i class="fas fa-plus"></i></a>
+            <a href="/board/notice.html">더보기 <span class="material-symbols-outlined">add</span></a>
           </div>
           <ul class="board-list" module="board_list_1">
             <!-- $count = 5 -->
@@ -400,7 +400,7 @@
         <div class="board-box">
           <div class="board-title">
             <h3>자료실</h3>
-            <a href="/board/download.html">더보기 <i class="fas fa-plus"></i></a>
+            <a href="/board/download.html">더보기 <span class="material-symbols-outlined">add</span></a>
           </div>
           <ul class="board-list" module="board_list_2">
             <!-- $count = 5 -->
@@ -410,7 +410,7 @@
         <div class="board-box">
           <div class="board-title">
             <h3>고객후기</h3>
-            <a href="/board/review.html">더보기 <i class="fas fa-plus"></i></a>
+            <a href="/board/review.html">더보기 <span class="material-symbols-outlined">add</span></a>
           </div>
           <ul class="board-list" module="board_list_3">
             <!-- $count = 5 -->
