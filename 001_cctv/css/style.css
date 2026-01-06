@@ -3528,6 +3528,35 @@ span.btnEm.sizeL {
   line-height: 1.3 !important;
 }
 
+/* 바로구매 버튼 안의 여러 span 처리 (예약주문, 정기배송 등) */
+.ec-base-button a.btnSubmit.sizeL span,
+.ec-base-button .btnSubmit span {
+  display: none !important;
+}
+
+/* 첫 번째 span만 표시 (바로구매하기) */
+.ec-base-button a.btnSubmit.sizeL span:first-child,
+.ec-base-button .btnSubmit span:first-child {
+  display: inline !important;
+}
+
+/* 버튼 컨테이너 - 줄바꿈 허용 */
+.ec-base-button.gColumn,
+[module="product_action"] .ec-base-button {
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+}
+
+/* 개별 버튼 크기 조정 */
+.ec-base-button.gColumn > a,
+.ec-base-button.gColumn > span,
+[module="product_action"] .ec-base-button > a,
+[module="product_action"] .ec-base-button > span {
+  flex: 1 1 calc(33% - 10px) !important;
+  min-width: 120px !important;
+  max-width: 200px !important;
+}
+
 /* 바로구매/예약주문 버튼 */
 .ec-base-button a.btnSubmit.sizeL,
 .ec-base-button span.btnSubmit.sizeL {
