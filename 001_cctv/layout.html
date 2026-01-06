@@ -6,38 +6,27 @@
   <meta name="description" content="YOURLOGO - CCTV 제조 및 판매 전문업체">
   <title>YOURLOGO - CCTV 전문 제조 판매업체</title>
 
-  <!-- Cafe24 필수 스크립트 -->
   <!--@css(/css/style.css)-->
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <link rel="stylesheet" href="/skin/layout/basic/css/style.css">
 </head>
 <body class="sub-page">
 
-  <!-- ========================================
-       HEADER - 카페24 메뉴 연동
-  ======================================== -->
+  <!-- HEADER -->
   <header id="header">
     <div class="header-inner">
-      <!-- Logo -->
       <h1 class="logo">
         <a href="/index.html">YOUR<span>LOGO</span></a>
       </h1>
 
-      <!-- GNB - 카페24 카테고리 모듈 연동 -->
+      <!-- 카페24 카테고리 모듈 -->
       <nav id="gnb" module="Layout_category">
-        <!--@css(/css/module/layout/category.css)-->
         <ul class="mainCategory">
           <li class="{$display_group}">
             <a href="{$link_category}">{$name}</a>
-            <!-- 서브 카테고리 -->
             <ul class="subCategory" module="Layout_category_sub">
               <li class="{$display_group}">
                 <a href="{$link_category}">{$name}</a>
@@ -47,9 +36,7 @@
         </ul>
       </nav>
 
-      <!-- Header Utility -->
       <div class="header-util">
-        <!-- 검색 모듈 -->
         <div class="search-form" module="searchHeader">
           <form action="/product/search.html" method="get">
             <input type="text" name="keyword" placeholder="검색어를 입력하세요">
@@ -57,15 +44,12 @@
           </form>
         </div>
 
-        <!-- 로그인 상태 모듈 -->
         <div class="login-state" module="Layout_stateLogon">
-          <!-- 비로그인 상태 -->
           <div class="xans-logged-out">
             <a href="/member/login.html">로그인</a>
             <span class="divider">|</span>
             <a href="/member/join.html">회원가입</a>
           </div>
-          <!-- 로그인 상태 -->
           <div class="xans-logged-in">
             <span>{$name}님</span>
             <span class="divider">|</span>
@@ -75,11 +59,8 @@
           </div>
         </div>
 
-        <!-- 장바구니 정보 모듈 -->
         <div class="header-icons">
-          <a href="/myshop/wish_list.html" title="관심상품">
-            <i class="fas fa-heart"></i>
-          </a>
+          <a href="/myshop/wish_list.html" title="관심상품"><i class="fas fa-heart"></i></a>
           <a href="/order/basket.html" title="장바구니" module="Layout_shoppingInfo">
             <i class="fas fa-shopping-cart"></i>
             <span class="cart-count">{$basket_count}</span>
@@ -87,19 +68,11 @@
         </div>
       </div>
 
-      <!-- Mobile Toggle -->
-      <button class="mobile-toggle" type="button" aria-label="메뉴 열기">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <button class="mobile-toggle" type="button"><span></span><span></span><span></span></button>
     </div>
   </header>
 
-  <!-- ========================================
-       PAGE HEADER
-       서브페이지마다 제목과 경로 변경
-  ======================================== -->
+  <!-- PAGE HEADER (서브페이지마다 수정) -->
   <div class="page-header">
     <div class="container">
       <h1><!-- 페이지 제목 --></h1>
@@ -113,9 +86,7 @@
     </div>
   </div>
 
-  <!-- ========================================
-       CONTENT AREA
-  ======================================== -->
+  <!-- CONTENT AREA -->
   <div class="content-area">
     <div class="container">
       <div class="content-wrapper">
@@ -123,8 +94,7 @@
         <!-- SIDE NAVIGATION -->
         <aside class="side-nav">
           <h3><!-- 카테고리명 --></h3>
-          <!-- 카페24 서브 카테고리 연동 가능 -->
-          <ul module="Layout_category_sub">
+          <ul module="Layout_category">
             <li class="{$display_group}">
               <a href="{$link_category}">{$name}</a>
             </li>
@@ -141,28 +111,17 @@
     </div>
   </div>
 
-  <!-- ========================================
-       FOOTER - 카페24 푸터 모듈
-  ======================================== -->
+  <!-- FOOTER -->
   <footer id="footer">
     <div class="footer-top">
       <div class="container">
         <div class="footer-grid">
-          <!-- 회사 정보 -->
           <div class="footer-info" module="Layout_footer">
             <div class="footer-logo">YOUR<span>LOGO</span></div>
-            <p>
-              상호: {$company_name} | 대표: {$president_name}<br>
-              사업자등록번호: {$company_registration_no}<br>
-              통신판매업신고: {$telecommunication_no}<br>
-              주소: {$address}<br>
-              이메일: {$email}
-            </p>
+            <p>상호: {$company_name} | 대표: {$president_name}<br>사업자등록번호: {$company_registration_no}<br>통신판매업신고: {$telecommunication_no}<br>주소: {$address}<br>이메일: {$email}</p>
             <p class="cs-phone">{$cs_phone}</p>
             <p class="cs-time">평일 09:00 - 18:00 (점심 12:00 - 13:00)<br>토/일/공휴일 휴무</p>
           </div>
-
-          <!-- 메뉴 1 -->
           <div class="footer-menu">
             <h4>제품</h4>
             <ul>
@@ -172,8 +131,6 @@
               <li><a href="/product/list.html?cate_no=4">부속품/케이블</a></li>
             </ul>
           </div>
-
-          <!-- 메뉴 2 -->
           <div class="footer-menu">
             <h4>고객지원</h4>
             <ul>
@@ -183,8 +140,6 @@
               <li><a href="/board/contact.html">상담신청</a></li>
             </ul>
           </div>
-
-          <!-- 메뉴 3 -->
           <div class="footer-menu">
             <h4>회사정보</h4>
             <ul>
@@ -197,7 +152,6 @@
         </div>
       </div>
     </div>
-
     <div class="footer-bottom">
       <div class="container">
         <div class="footer-bottom-inner">
@@ -212,19 +166,11 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
   <script>
-    // Header Scroll Effect
     window.addEventListener('scroll', function() {
       const header = document.getElementById('header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+      header.classList.toggle('scrolled', window.scrollY > 50);
     });
-
-    // Mobile Menu Toggle
     document.querySelector('.mobile-toggle').addEventListener('click', function() {
       document.getElementById('gnb').classList.toggle('active');
     });
