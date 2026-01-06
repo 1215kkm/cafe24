@@ -22,15 +22,11 @@
         <a href="/index.html">YOUR<span>LOGO</span></a>
       </h1>
 
-      <!-- 카페24 카테고리 모듈 -->
       <nav id="gnb" module="Layout_category">
         <ul class="mainCategory">
-          <li class="{$display_group}">
-            <a href="{$link_category}">{$name}</a>
+          <li class="{$display_group}"><a href="{$link_product_list}">{$name}</a>
             <ul class="subCategory" module="Layout_category_sub">
-              <li class="{$display_group}">
-                <a href="{$link_category}">{$name}</a>
-              </li>
+              <li class="{$display_group}"><a href="{$link_product_list}">{$name}</a></li>
             </ul>
           </li>
         </ul>
@@ -43,7 +39,6 @@
             <button type="submit"><i class="fas fa-search"></i></button>
           </form>
         </div>
-
         <div class="login-state" module="Layout_statelogoff">
           <a href="/member/login.html">로그인</a>
           <span class="divider">|</span>
@@ -56,13 +51,9 @@
           <span class="divider">|</span>
           <a href="{$action_logout}">로그아웃</a>
         </div>
-
         <div class="header-icons">
           <a href="/myshop/wish_list.html" title="관심상품"><i class="fas fa-heart"></i></a>
-          <a href="/order/basket.html" title="장바구니" module="Layout_shoppingInfo">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-count">{$basket_count}</span>
-          </a>
+          <a href="/order/basket.html" title="장바구니" module="Layout_shoppingInfo"><i class="fas fa-shopping-cart"></i><span class="cart-count">{$basket_count}</span></a>
         </div>
       </div>
 
@@ -73,11 +64,11 @@
   <!-- PAGE HEADER -->
   <div class="page-header" module="Layout_path">
     <div class="container">
-      <h1>{$category_title}</h1>
+      <h1>{$page_name}</h1>
       <div class="breadcrumb">
         <a href="/index.html">HOME</a>
         <span>&gt;</span>
-        <span>{$category_title}</span>
+        <span>{$page_name}</span>
       </div>
     </div>
   </div>
@@ -91,9 +82,7 @@
         <aside class="side-nav" module="Layout_category">
           <h3>제품</h3>
           <ul>
-            <li class="{$display_group}">
-              <a href="{$link_category}">{$name}</a>
-            </li>
+            <li class="{$display_group}"><a href="{$link_product_list}">{$name}</a></li>
           </ul>
         </aside>
 
@@ -101,9 +90,9 @@
         <div class="main-content">
 
           <!-- 상품 목록 헤더 -->
-          <div class="product-list-header" module="product_list">
-            <p class="product-count">총 <strong>{$total_count}</strong>개의 상품이 있습니다.</p>
-            <div class="product-sort">
+          <div class="product-list-header">
+            <p class="product-count" module="product_list">총 <strong>{$total_count}</strong>개의 상품이 있습니다.</p>
+            <div class="product-sort" module="product_sort">
               <select onchange="location.href=this.value;">
                 <option value="{$sort_link_date}" {$sort_date}>신상품순</option>
                 <option value="{$sort_link_popular}" {$sort_popular}>인기순</option>
@@ -114,31 +103,22 @@
             </div>
           </div>
 
-          <!-- 카페24 상품 목록 모듈 -->
-          <div module="product_list">
+          <!-- 상품 목록 -->
+          <ul class="prdList grid4" module="product_list">
             <!-- $count = 12 -->
-            <ul class="prdList grid4">
-              <li class="item" id="anchorBoxId_{$product_no}">
-                <div class="box">
-                  <div class="thumb">
-                    <a href="/product/detail.html{$param}">
-                      <img src="{$image_medium}" alt="{$seo_alt_tag}" />
-                    </a>
-                    <div class="status">
-                      <div class="icon">{$soldout_icon}{$recommend_icon}{$new_icon}{$product_icons}</div>
-                    </div>
-                  </div>
-                  <p class="name"><a href="/product/detail.html{$param}">{$product_name}</a></p>
-                  <div class="price">
-                    <span class="sale">{$disp_product_price}</span>
-                    <span class="origin {$product_price_ref_display|display}">{$txt_product_price_ref}</span>
-                  </div>
+            <li class="item" id="anchorBoxId_{$product_no}">
+              <div class="box">
+                <div class="thumb">
+                  <a href="/product/detail.html{$param}"><img src="{$image_medium}" alt="{$seo_alt_tag}" /></a>
+                  <div class="status"><div class="icon">{$soldout_icon}{$recommend_icon}{$new_icon}{$product_icons}</div></div>
                 </div>
-              </li>
-            </ul>
-          </div>
+                <p class="name"><a href="/product/detail.html{$param}">{$product_name}</a></p>
+                <div class="price"><span class="sale">{$disp_product_price}</span><span class="origin {$product_price_ref_display|display}">{$txt_product_price_ref}</span></div>
+              </div>
+            </li>
+          </ul>
 
-          <!-- 카페24 페이지네이션 모듈 -->
+          <!-- 페이지네이션 -->
           <div class="pagination" module="paging_module">
             <a href="{$first_page}" class="first"><i class="fas fa-angle-double-left"></i></a>
             <a href="{$prev_page}" class="prev"><i class="fas fa-angle-left"></i></a>
@@ -163,7 +143,7 @@
             <div class="footer-logo">YOUR<span>LOGO</span></div>
             <p>상호: {$company_name} | 대표: {$president_name}<br>사업자등록번호: {$company_registration_no}<br>통신판매업신고: {$telecommunication_no}<br>주소: {$address}<br>이메일: {$email}</p>
             <p class="cs-phone">{$cs_phone}</p>
-            <p class="cs-time">평일 09:00 - 18:00 (점심 12:00 - 13:00)<br>토/일/공휴일 휴무</p>
+            <p class="cs-time">평일 09:00 - 18:00</p>
           </div>
           <div class="footer-menu">
             <h4>제품</h4>
@@ -202,7 +182,6 @@
           <div class="policy">
             <a href="/policy/privacy.html">개인정보처리방침</a>
             <a href="/policy/terms.html">이용약관</a>
-            <a href="/policy/guide.html">이용안내</a>
           </div>
         </div>
       </div>
