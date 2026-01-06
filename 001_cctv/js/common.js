@@ -11,6 +11,31 @@ window.addEventListener('scroll', function() {
   }
 });
 
+// Scroll Animation (Fade In Up)
+function initScrollAnimation() {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // 애니메이션 대상 요소들
+  const animateElements = document.querySelectorAll('.section-header, .icon-menu-item, .about-image, .about-content, .prdList .item, .team-item, .board-box, .cta-content');
+  animateElements.forEach(function(el) {
+    el.classList.add('scroll-animate');
+    observer.observe(el);
+  });
+}
+
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
   const mobileToggle = document.querySelector('.mobile-toggle');
@@ -22,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
       this.classList.toggle('active');
     });
   }
+
+  // Initialize scroll animations
+  initScrollAnimation();
 
   // Close mobile menu when clicking outside
   document.addEventListener('click', function(e) {
