@@ -3695,7 +3695,8 @@ span.btnEm.sizeL {
 [module="product_relationlist"] .prdList {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
-  gap: 30px !important;
+  row-gap: 30px !important;
+  column-gap: 15px !important;
   list-style: none !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -4155,7 +4156,7 @@ span.btnEm.sizeL {
   margin: 0 !important;
   padding: 0 !important;
   row-gap: 30px !important;
-  column-gap: 25px !important;
+  column-gap: 15px !important;
 }
 
 .ec-base-product .prdList.grid2 {
