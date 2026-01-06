@@ -3081,18 +3081,30 @@ body.sub-page #juno_wrap {
 }
 
 /* Product Heading Area - 상품명 영역 */
-[module="product_detail"] .headingArea {
-  margin-bottom: 30px !important;
+[module="product_detail"] .headingArea,
+.detailArea .headingArea,
+.xans-product-detail .headingArea {
+  margin-bottom: 25px !important;
   padding-bottom: 0 !important;
   border-bottom: none !important;
 }
 
-[module="product_detail"] .headingArea h2 {
-  font-size: 32px !important;
+[module="product_detail"] .headingArea h2,
+.detailArea .headingArea h2,
+.xans-product-detail .headingArea h2,
+.headingArea h2 {
+  font-size: 28px !important;
   font-weight: 700 !important;
   color: #212529 !important;
   line-height: 1.4 !important;
   margin-bottom: 15px !important;
+  word-break: keep-all !important;
+}
+
+/* 상품명 텍스트가 너무 길 때 처리 */
+.headingArea h2 span {
+  font-size: inherit !important;
+  font-weight: inherit !important;
 }
 
 [module="product_detail"] .headingArea .icon {
@@ -3114,12 +3126,15 @@ body.sub-page #juno_wrap {
   flex-wrap: wrap !important;
 }
 
-/* Image Area - 이미지 영역 */
+/* Image Area - 이미지 영역 (크기 확대) */
 [module="product_detail"] .imgArea,
-.imgArea[module="product_image"] {
-  flex: 0 0 500px !important;
-  max-width: 500px !important;
-  width: 500px !important;
+.imgArea[module="product_image"],
+.detailArea .imgArea,
+.xans-product-detail .imgArea {
+  flex: 0 0 560px !important;
+  max-width: 560px !important;
+  width: 560px !important;
+  min-width: 560px !important;
 }
 
 [module="product_detail"] .imgArea .keyImg,
@@ -3395,30 +3410,40 @@ div[id*="totalPrice"] {
 /* Action Buttons - 구매 버튼 영역 */
 [module="product_action"] .ec-base-button.gColumn,
 .infoArea .ec-base-button.gColumn,
-.ec-base-button.gColumn {
+.ec-base-button.gColumn,
+.xans-product-action .ec-base-button {
   display: flex !important;
   gap: 12px !important;
   margin-top: 25px !important;
-  flex-wrap: wrap !important;
+  flex-wrap: nowrap !important;
+  overflow: visible !important;
+  width: 100% !important;
 }
 
 [module="product_action"] .ec-base-button.gColumn a,
 [module="product_action"] .ec-base-button.gColumn span,
 .infoArea .ec-base-button.gColumn a,
-.infoArea .ec-base-button.gColumn span {
-  flex: 1 !important;
-  min-width: 140px !important;
+.infoArea .ec-base-button.gColumn span,
+.xans-product-action .ec-base-button a,
+.xans-product-action .ec-base-button span {
+  flex: 1 1 auto !important;
+  min-width: 120px !important;
+  max-width: none !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 20px 25px !important;
-  font-size: 18px !important;
+  padding: 18px 20px !important;
+  font-size: 16px !important;
   font-weight: 700 !important;
-  border-radius: 14px !important;
+  border-radius: 12px !important;
   transition: all 0.3s ease !important;
   text-align: center !important;
   border: none !important;
   cursor: pointer !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  line-height: 1.2 !important;
 }
 
 /* Buy Now Button - 바로 구매하기 */
@@ -3485,6 +3510,52 @@ span.btnEm.sizeL {
 [module="product_action"] .ec-base-button.gColumn a[onclick*="wishlist"]:hover {
   border-color: #e74c3c !important;
   color: #e74c3c !important;
+}
+
+/* Cafe24 sizeL 버튼 스타일 오버라이드 */
+.ec-base-button a.sizeL,
+.ec-base-button span.sizeL {
+  min-width: 100px !important;
+  padding: 16px 20px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1.3 !important;
+}
+
+/* 바로구매/예약주문 버튼 */
+.ec-base-button a.btnSubmit.sizeL,
+.ec-base-button span.btnSubmit.sizeL {
+  background: linear-gradient(135deg, #f7941d 0%, #ff8c00 100%) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* 장바구니 버튼 */
+.ec-base-button a.btnNormal.sizeL,
+.ec-base-button span.btnNormal.sizeL {
+  background: #1a3a5c !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* 품절 버튼 */
+.ec-base-button span.btnEm.sizeL {
+  background: #adb5bd !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* 관심상품 버튼 */
+.ec-base-button a.btnBasic.sizeL {
+  background: #fff !important;
+  color: #495057 !important;
+  border: 1px solid #dee2e6 !important;
 }
 
 /* Guide Area - 안내문구 */
